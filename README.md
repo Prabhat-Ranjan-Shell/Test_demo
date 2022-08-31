@@ -1,70 +1,70 @@
-# Getting Started with Create React App
+## Edit JSON (Takes less time)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+- Load json in textarea and edit the json
+- Validate the json after edit
 
-## Available Scripts
+## create json
 
-In the project directory, you can run:
+- Give the basic template to fill the values where we will give keys 
+- A simple UI to let us know: 
+- How many tabs in each tab type
+- How many questions to be created in each tab category
+- This will help us to create a sample json to fill the values
 
-### `npm start`
+``______________________________________________________________________``
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Edit JSON (Takes more time)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Get json schema by doing json schema call
+- Populate json in similar way as it is currently displayed in CCAT with Edit Capability --- Medium (Not feasible as it doesn to give all options to edit)
+- Or load the raw json inside a textarea to edit --- Easy (can edit any value which can make json invalid or may break the code, can't control the edit)
+- Or load json with form fields --- Difficult (Can only edit editable values and can control what to edit)
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Create a new JSON (We can make the JSON object keys also dynamic along with content)
 
-### `npm run build`
+#### workflow name
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Enter workflow name
+- Enter version
+- Workflow name will be workflow + version .json
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Workflow Tabs
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Enter tab type (Technical Feasibility or Value Economic Screening)
+- Each tab type will be a single object with 'id', 'name', 'label' and 'innerTabs' array
+- Each tab will be a single object placed inside "innerTabs" array
 
-### `npm run eject`
+##### Tabs 
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Enter Tab name
+- Each tab will be a object with 'id', 'name', 'type', 'label' and 'content' array
+- Content array will be combination of objects wich contains Questions, Results, Statements
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Select options with Questions, Result, Statement
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+###### If Question (How to create unique id for each questions and same will be used in db to create modal variable)
+- Question is a object consists of 'id', 'name', 'type', 'label', 'condition', 'theme', 'dwfsUrl', 'dwfsTab', 'options'
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- 'options' is a array of object where each object consists of 'name', 'label', 'value'
+- 'options' name will be same as Question's id so it will be prepopulated and non-editable
 
-## Learn More
+- condition (i.e. "{IsBHTLessThan300} == '> 300º F'")
+- condition is used to enable disable question, statement or result
+- For giving condition we can create a dropdown with question and options and after selection the appropriate condition will be created by code
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- 'theme' it is used for giving background to question
+- It will be a dropdown with 'pass - green', 'fail - red', 'warning - orange', 'incomplete - gray', 'statement - white'
 
-To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Code Splitting
+###### If Result (How to create id here the result will not be stored in db)
+- Result is a object consists of 'id', 'name', 'type', 'label', 'condition', 'enablecolor', 'disablecolor'
+- condition (i.e. "{IsBHTLessThan300} == '> 300º F'")
+- condition is used to enable disable question, statement or result
+- For giving condition we can create a dropdown with question and options and after selection the appropriate condition will be created by code
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- 'enablecolor' & 'disablecolor' will be a dropdown with 'pass - green', 'fail - red', 'warning - orange', 'incomplete - gray', 'statement - white'
 
-### Analyzing the Bundle Size
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+###### If Statement (How to create id as it will be stored in db)
+- Statement is a object consists of 'id', 'name', 'label', 'type'

@@ -1,23 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
+// import Convertor from './component/convertor';
+// import Customtabs from './component/tab/customTab';
+// import Tabs from './component/tabs';
+// import Reacttab from './component/reactTab';
+import PDFGenerator from './component/pdfGenerator';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <h1>Excel to Json conversion</h1> */}
+      {/* <Convertor /> */}
+      {/* <Customtabs /> */}
+      {/* <Reacttab /> */}
+      <PDFGenerator />
     </div>
   );
 }

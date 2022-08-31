@@ -1,0 +1,732 @@
+[
+	{
+		"label": "Technical Feasibility",
+		"name": "technicalFeasibility",
+		"id": "technicalFeasibility",
+
+		"innerTabs": [
+			{
+				"id": "fluidsFeasibility",
+				"name": "fluidsFeasibility",
+				"type": "tab",
+				"label": "Fluids Feasiblity",
+				"content": [
+					{
+						"id": "IsBHTLessThan300",
+						"name": "IsBHTLessThan300",
+						"type": "question",
+						"label": "Bottom Hole Temperature (BHT) of completion interval",
+						"dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/ReservoirOverburdenTemp/ROT",
+						"dwfsTab": "Reservoir & OB Temp",
+						"options": [
+							{
+								"name": "IsBHTLessThan300",
+								"label": "< 300º F",
+								"value": "< 300º F"
+							},
+							{
+								"name": "IsBHTLessThan300",
+								"label": "> 300º F",
+								"value": "> 300º F"
+							}
+						]
+					},
+					{
+						"id": "bht_result",
+						"name": "bht_result",
+						"type": "resultbox",
+						"label": "Post Perf & Pack Fluid Loss Pills are commercially available.",
+						"condition": "{IsBHTLessThan300} == '< 300º F'",
+						"enableColor": "pass",
+						"disableColor": "incomplete"
+					},
+					{
+						"id": "IsPostPerfPostPackFluidLossPillsAvailable",
+						"name": "IsPostPerfPostPackFluidLossPillsAvailable",
+						"type": "question",
+						"label": "Are Post Perf & Pack Fluid Loss Pills commercially available?",
+						"condition": "{IsBHTLessThan300} == '> 300º F'",
+
+						"options": [
+							{
+								"name": "IsPostPerfPostPackFluidLossPillsAvailable",
+								"label": "Yes",
+								"value": "Yes"
+							},
+							{
+								"name": "IsPostPerfPostPackFluidLossPillsAvailable",
+								"label": "No",
+								"value": "No"
+							}
+						]
+					},
+					{
+						"id": "fluidLossPillsAvailable_result_1",
+						"name": "fluidLossPillsAvailable_result_1",
+						"type": "resultbox",
+						"label": "Post Perf & Pack Fluid Loss Pills are commercially available.",
+						"enableColor": "pass",
+						"disableColor": "incomplete",
+						"condition": "{IsPostPerfPostPackFluidLossPillsAvailable} == 'Yes'"
+					},
+					{
+						"id": "fluidLossPillsAvailable_result_2",
+						"name": "fluidLossPillsAvailable_result_2",
+						"type": "resultbox",
+						"label": "Stop: If not feasible to develop high temperature (HT) pill options",
+						"enableColor": "fail",
+						"disableColor": "incomplete",
+						"condition": "{IsPostPerfPostPackFluidLossPillsAvailable} == 'No'"
+					}
+				]
+			},
+            {
+				"id": "selfScalingFeasibility",
+				"name": "selfScalingFeasibility",
+				"type": "tab",
+				"label": "Self-Scaling Tolerance Feasibility ",
+				"tooltip": "Have elected to complete wells OH instead of CH because of potential scale issues.",
+				"content": [
+					{
+						"id": "DoesReservoirHasHistoryOfPoorInflow",
+						"name": "DoesReservoirHasHistoryOfPoorInflow",
+						"type": "question",
+						"label": "Reservoir history of poor inflow performance due to scaling?",
+						"dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/ReservoirOverburdenFluids/ScalingRiskAndHydrateCurve",
+						"dwfsTab": "Reservoir & OB Fluids",
+						
+						"options": [
+							{
+								"name": "DoesReservoirHasHistoryOfPoorInflow",
+								"label": "Yes",
+								"value": "Yes"
+							},
+							{
+								"name": "DoesReservoirHasHistoryOfPoorInflow",
+								"label": "No",
+								"value": "No"
+							}
+						]
+					},
+					{
+						"id": "poorInflowDueToScaling_result",
+						"name": "poorInflowDueToScaling_result",
+						"type": "resultbox",
+						"label": "Continue",
+						"condition": "{DoesReservoirHasHistoryOfPoorInflow} == 'No'",
+                        "enableColor": "pass",
+						"disableColor": "incomplete"
+					},
+					{
+						"id": "DoesOccuresEndOfCompletionLifecycleLowImpactToEUR",
+						"name": "DoesOccuresEndOfCompletionLifecycleLowImpactToEUR",
+						"type": "question",
+						"label": "Occurs at the end of the completion lifecycle with low impact to EUR?",
+						"condition": "{DoesReservoirHasHistoryOfPoorInflow} == 'Yes'",
+
+                        "options": [
+                            {
+                                "name": "DoesOccuresEndOfCompletionLifecycleLowImpactToEUR",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "DoesOccuresEndOfCompletionLifecycleLowImpactToEUR",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+					},
+                    {
+						"id": "lowImpactToEur_result",
+						"name": "lowImpactToEur_result",
+						"type": "resultbox",
+						"label": "Continue",
+						"condition": "{DoesOccuresEndOfCompletionLifecycleLowImpactToEUR} == 'Yes'",
+                        "enableColor": "pass",
+						"disableColor": "incomplete"
+					},
+                    {
+                        "id": "CanScaleBeRemdiated",
+						"name": "CanScaleBeRemdiated",
+						"type": "question",
+						"label": "Can scale be remediated easily with stimulations?",
+						"condition": "{DoesOccuresEndOfCompletionLifecycleLowImpactToEUR} == 'No'",
+						"dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/ReservoirOverburdenFluids/ScalingRiskAndHydrateCurve",
+						"dwfsTab": "Reservoir & OB Fluids",
+
+                        "options": [
+                            {
+                                "name": "CanScaleBeRemdiated",
+                                "label": "Difficult (BaSO4)",
+                                "value": "Difficult (BaSO4)"
+                            },
+                            {
+                                "name": "CanScaleBeRemdiated",
+                                "label": "Yes (CaCO3/Preemptive Scale Treatments are effective)",
+                                "value": "Yes (CaCO3/Preemptive Scale Treatments are effective)"
+                            }
+                        ]
+					},
+                    {
+						"id": "scaleSimulation_warning",
+						"name": "scaleSimulation_warning",
+						"type": "resultbox",
+						"label": "Still technically feasible but potentially not the preferred completion option - evaluate against other completion options.",
+						"condition": "{CanScaleBeRemdiated} == 'Difficult (BaSO4)'",
+                        "enableColor": "warning",
+						"disableColor": "incomplete"
+					},
+                    {
+                        "id": "IsLikelihoodOfPerformingScaleTreatmentsHigh",
+                        "name": "IsLikelihoodOfPerformingScaleTreatmentsHigh",
+                        "type": "question",
+                        "label": "Likelihood of performing scale treatments?",
+						"tooltip": "To mitigate potential scale issues, consider OH completion concept.",
+                        "condition": "{CanScaleBeRemdiated} == 'Yes (CaCO3/Preemptive Scale Treatments are effective)'",
+
+                        "options": [
+                            {
+                                "name": "IsLikelihoodOfPerformingScaleTreatmentsHigh",
+                                "label": "Low (Subsea Well Access & Cost)",
+                                "value": "Low (Subsea Well Access & Cost)"
+                            },
+                            {
+                                "name": "IsLikelihoodOfPerformingScaleTreatmentsHigh",
+                                "label": "High (DVA Well Access)",
+                                "value": "High (DVA Well Access)"
+                            }
+                        ]
+                    },
+                    {
+						"id": "scaleTreatment_warning",
+						"name": "scaleTreatment_warning",
+						"type": "resultbox",
+						"label": "Annual portfolio intervention campaigns will provide accessibility to a work unit & lower intervention costs.",
+						"condition": "{IsLikelihoodOfPerformingScaleTreatmentsHigh} == 'Low (Subsea Well Access & Cost)'",
+                        "enableColor": "warning",
+						"disableColor": "incomplete"
+					},
+                    {
+						"id": "scaleTreatment_result",
+						"name": "scaleTreatment_result",
+						"type": "resultbox",
+						"label": "Self-Scaling Tolerance Feasible",
+						"condition": "{IsLikelihoodOfPerformingScaleTreatmentsHigh} == 'High (DVA Well Access)'",
+                        "enableColor": "pass",
+						"disableColor": "incomplete"
+					}
+				]
+			},
+            {
+                "id": "chSandFeasilibityScreening",
+                "name": "chSandFeasilibityScreening",
+                "type": "tab",
+                "label": "CH Sand Control Feasibility - Frac Pack (FP)",
+                "content": [
+                    {
+                        "id": "IsHighRiskOfFracturingOutOfZoneWaterSandOrInZoneWaterLevel",
+                        "name": "IsHighRiskOfFracturingOutOfZoneWaterSandOrInZoneWaterLevel",
+                        "type": "question",
+                        "label": "Risk of fracturing into an out-of-zone water sand or an in-zone water level?",
+						"tooltip": "Have elected to complete wells OH instead of CH because of potential scale issues.",
+                        "options": [
+							{
+                                "name": "IsHighRiskOfFracturingOutOfZoneWaterSandOrInZoneWaterLevel",
+                                "label": "High",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsHighRiskOfFracturingOutOfZoneWaterSandOrInZoneWaterLevel",
+                                "label": "Low/None",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+						"id": "fracturingZoneWaterInOut_stop",
+						"name": "fracturingZoneWaterInOut_stop",
+						"type": "resultbox",
+						"label": "Stop",
+						"enableColor": "fail",
+						"disableColor": "incomplete",
+						"condition": "{IsHighRiskOfFracturingOutOfZoneWaterSandOrInZoneWaterLevel} == 'Yes'"
+					},
+                    {
+                        "id": "IsCementIsolationQuantityGood",
+                        "name": "IsCementIsolationQuantityGood",
+                        "type": "question",
+                        "label": "Cement Isolation Quality?",
+						"condition": "{IsHighRiskOfFracturingOutOfZoneWaterSandOrInZoneWaterLevel} == 'No'",
+                        "options": [
+                            {
+                                "name": "IsCementIsolationQuantityGood",
+                                "label": "Good quality isolation",
+                                "value": "Good quality isolation"
+                            },
+                            {
+                                "name": "IsCementIsolationQuantityGood",
+                                "label": "Poor to no isolation",
+                                "value": "Poor to no isolation"
+                            }
+                        ]
+                    },
+					{
+						"id": "cementIsolation_warning",
+						"name": "cementIsolation_warning",
+						"type": "resultbox",
+						"label": "Review remedial squeeze or HRWP option. Also potential for cement bond to improve over time with mud solids settling.",
+						"enableColor": "warning",
+						"disableColor": "incomplete",
+						"condition": "{IsCementIsolationQuantityGood} == 'Poor to no isolation'"
+					},
+                    {
+                        "id": "IsLowerPermOrHighlyCompetitiveReservoir",
+                        "name": "IsLowerPermOrHighlyCompetitiveReservoir",
+                        "type": "question",
+                        "label": "Lower Perm (<100 md) or Highly Compactive Reservoir (expected or historical) with large amount of depletion",
+						"tooltip": "Fracture maintains better long term inflow performance for highly compactive reservoirs with expected high depletion (>5,000 psi).",
+						"condition": "{IsCementIsolationQuantityGood} == 'Good quality isolation'",
+						"dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/PPFGBoreholeStability/BS",
+						"dwfsTab": "PPFG",
+                        "options": [
+                            {
+                                "name": "IsLowerPermOrHighlyCompetitiveReservoir",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsLowerPermOrHighlyCompetitiveReservoir",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+						"id": "lowerPermHighlyCompactiveReserviour_warning",
+						"name": "lowerPermHighlyCompactiveReserviour_warning",
+						"type": "resultbox",
+						"label": "Review need for FP vs HRWP option",
+						"enableColor": "warning",
+						"disableColor": "incomplete",
+						"condition": "{IsLowerPermOrHighlyCompetitiveReservoir} == 'No'"
+					},
+                    {
+                        "id": "IsShaleBreaksGreaterOrEqual50",
+                        "name": "IsShaleBreaksGreaterOrEqual50",
+                        "type": "question",
+                        "label": "Shale breaks ≥ 50' MD within the perforation interval?",
+						"tooltip": "Sand control failure data indicates higher risk of failure for frac pack completions with blank perforated sections, consider perforating shale section.   For sands with ≥ 50'  shale breaks, stacked gravel packs should be considered. Consider impact to SCORE if shunts are used for annulus packing due to reservoir heterogeneity along with potential operational issues associated with the use of shunt tubes (see reference 28 in REFERENCES tab).",
+						"condition": "{IsLowerPermOrHighlyCompetitiveReservoir} == 'Yes'",
+						"dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/WellFunction/Perforating",
+						"dwfsTab": "Well Function",
+						
+                        "options": [
+                            {
+                                "name": "IsShaleBreaksGreaterOrEqual50",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsShaleBreaksGreaterOrEqual50",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+						"id": "shaleBreaks50_stop",
+						"name": "shaleBreaks50_stop",
+						"type": "resultbox",
+						"label": "Stop",
+						"enableColor": "fail",
+						"disableColor": "incomplete",
+						"condition": "{IsShaleBreaksGreaterOrEqual50} == 'Yes'"
+					},
+                    {
+                        "id": "IsShaleBreaksGreaterThanOrEqualTo40AndLessThanEqualTo50",
+                        "name": "IsShaleBreaksGreaterThanOrEqualTo40AndLessThanEqualTo50",
+                        "type": "question",
+                        "label": "Shale breaks ≥ 40' and ≤50' MD within the perforation interval?",
+						"tooltip": "Historical Frac Pack tracer logs indicate that zones with up to 30' MD of  shale breaks within the gross interval have been effectively stimulated by perforating the entire interval (see Reference 27 in REFERENCES tab).  However, fracture modeling results indicate up to 40' MD should also be achievable, although the actual data set is small.   For intervals with shale breaks ≥ 40' ≤ 50', a HRWP should be considered.  Up to 30' MD has also been achievable with slim holes; rate limits with small tools will impact ability to treat larger shale breaks.",
+						"condition": "{IsShaleBreaksGreaterOrEqual50} == 'No'",
+                        "options": [
+                            {
+                                "name": "IsShaleBreaksGreaterThanOrEqualTo40AndLessThanEqualTo50",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "IsShaleBreaksGreaterThanOrEqualTo40AndLessThanEqualTo50",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+						"id": "shaleBreaks4050_stop",
+						"name": "shaleBreaks4050_stop",
+						"type": "resultbox",
+						"label": "Stop",
+						"enableColor": "fail",
+						"disableColor": "incomplete",
+						"condition": "{IsShaleBreaksGreaterThanOrEqualTo40AndLessThanEqualTo50} == 'Yes'"
+					},
+                    {
+                        "id": "IsHoleAngleGreaterThan65",
+                        "name": "IsHoleAngleGreaterThan65",
+                        "type": "question",
+                        "label": "Hole Angle?",
+						"tooltip": "Hole angle and zone length are usually directly dependent. Increasing zone length and hole angle are usually associated with higher risks of achieving a complete annulus pack over the entire interval (although recent reliability data reflects an inverse of this association). A HRWP is used to mitigate poor annulus packing risk above 65° hole angle. (See reference 13 in REFERENCES tab.)",
+						"condition": "{IsShaleBreaksGreaterThanOrEqualTo40AndLessThanEqualTo50} == 'No'",
+						"dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/TargetTrajectory/Trajectory",
+						"dwfsTab": "Target & Trajectory",
+						
+                        "options": [
+                            {
+                                "name": "IsHoleAngleGreaterThan65",
+                                "label": "< 65º",
+                                "value": "< 65º"
+                            },
+                            {
+                                "name": "IsHoleAngleGreaterThan65",
+                                "label": "> 65º",
+                                "value": "> 65º"
+                            }
+                        ]
+                    },
+                    {
+						"id": "holeAngle_stop",
+						"name": "holeAngle_stop",
+						"type": "resultbox",
+						"label": "Stop",
+						"enableColor": "fail",
+						"disableColor": "incomplete",
+						"condition": "{IsHoleAngleGreaterThan65} == '> 65º'"
+					},
+                    {
+                        "id": "IsCasingODLessThanOrEqual658",
+                        "name": "IsCasingODLessThanOrEqual658",
+                        "type": "question",
+                        "label": "Casing OD?",
+						"tooltip": "Note: 6 5/8\" casing size listed here for completeness, but 6 5/8\" size tools are not readily available. There is essentially no minimum casing OD size limit that a sand control completion cannot be installed in.  However casing sizes below 5\" inherently carry much higher installation risks because of small tool sizes and tight clearances and casing sizes with < 5.9\" ID have a higher sand control failure rate (see Sand Control Failure Rate Weibull curves reference in the Economic Model References Tab.).",
+						"condition": "{IsHoleAngleGreaterThan65} == '< 65º'",
+                        "options": [
+                            {
+                                "name": "IsCasingODLessThanOrEqual658",
+                                "label": "≥ 6 - 5/8\"",
+                                "value": "≥ 6 5/8\""
+                            },
+                            {
+                                "name": "IsCasingODLessThanOrEqual658",
+                                "label": "≤ 5 - 1/2\"",
+                                "value": "≤ 5 1/2\""
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsIntervalLengthGreaterThan300",
+                        "name": "IsIntervalLengthGreaterThan300",
+                        "type": "question",
+                        "label": "Interval Length?",
+						"tooltip": "A very short interval  <30' has unique challenges because of a small job size and a short job duration. (reference 38 in REFERENCES tab)",
+						"condition": "{IsCasingODLessThanOrEqual658} == '≥ 6 5/8\"'",
+						"dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/TargetTrajectory/Trajectory",
+						"dwfsTab": "Target & Trajectory",
+
+                        "options": [
+                            {
+                                "name": "IsIntervalLengthGreaterThan300",
+                                "label": "> 300'",
+                                "value": "> 300 inch"
+                            },
+                            {
+                                "name": "IsIntervalLengthGreaterThan300",
+                                "label": "< 300'",
+                                "value": "< 300 inch"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsIntervalLengthGreaterThan150",
+                        "name": "IsIntervalLengthGreaterThan150",
+                        "type": "question",
+                        "label": "Interval Length?",
+						"tooltip": "See slimhole sand control failures (reference 34 in REFERENCES tab) Tool proppant limits and required treating rate for typical kh GoM sands define these limits in combination with ≤15 ksi surface treating equipment available in the industry.  Longer intervals are usually stacked or a HRWP is pumped. (See reference 34 in REFERENCES tab) Tool proppant limits for typical tool sizes can be found in reference 14 (See REFERENCES tab).",
+						"condition": "{IsCasingODLessThanOrEqual658} == '≤ 5 1/2\"'",
+						"dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/TargetTrajectory/Trajectory",
+						"dwfsTab": "Target & Trajectory",
+
+                        "options": [
+                            {
+                                "name": "IsIntervalLengthGreaterThan150",
+                                "label": "≥ 150'",
+                                "value": "≥ 150 inch"
+                            },
+                            {
+                                "name": "IsIntervalLengthGreaterThan150",
+                                "label": "≤ 150'",
+                                "value": "≤ 150 inch"
+                            }
+                        ]
+                    },
+                    {
+						"id": "intervalLength_warning",
+						"name": "intervalLength_warning",
+						"type": "resultbox",
+						"label": "Expected total proppant volume along with the planned treating pump rate should be reviewed against the equipment erosional tests for intervals beyond these lengths to determine treating feasibility.",
+						"enableColor": "warning",
+						"disableColor": "incomplete",
+						"condition": "{IsIntervalLengthGreaterThan300} == \"> 300 inch\""
+					},
+                    {
+						"id": "intervalLength_result",
+						"name": "intervalLength_result",
+						"type": "resultbox",
+						"label": "Frac Pack Feasible",
+						"enableColor": "pass",
+						"disableColor": "incomplete",
+						"condition": "{IsIntervalLengthGreaterThan300} == \"< 300 inch\""
+					},
+                    {
+						"id": "intervalLength2_warning",
+						"name": "intervalLength2_warning",
+						"type": "resultbox",
+						"label": "Expected total proppant volume along with the planned treating pump rate should be reviewed against the equipment erosional tests for intervals beyond these lengths to determine treating feasibility.",
+						"enableColor": "warning",
+						"disableColor": "incomplete",
+						"condition": "{IsIntervalLengthGreaterThan150} == \"≥ 150 inch\""
+					},
+                    {
+						"id": "intervalLength2_result",
+						"name": "intervalLength2_result",
+						"type": "resultbox",
+						"label": "Frac Pack Feasible",
+						"enableColor": "pass",
+						"disableColor": "incomplete",
+						"condition": "{IsIntervalLengthGreaterThan150} == \"≤ 150 inch\""
+					}
+                ]
+            },
+			{
+				"id": "HRWPScreening",
+				"name": "HRWPScreening",
+				"type": "tab",
+				"label": "CH Sand Control Feasibility – High Rate Water Pack (HRWP)",
+				"content": [
+					{
+						"id": "CanZoneBeBackSurged",
+						"name": "CanZoneBeBackSurged",
+						"type": "question",
+						"label": "Can zone be backsurged?",
+						"tooltip": "For example, high overbalance, or losses cannot be controlled by ZnBr2 fluid; consider FP option.",
+						"options": [
+							{
+								"name": "CanZoneBeBackSurged",
+								"label": "No",
+								"value": "No"
+							},
+							{
+								"name": "CanZoneBeBackSurged",
+								"label": "Hole Angle > 65",
+								"value": "Hole Angle > 65"
+							},
+							{
+								"name": "CanZoneBeBackSurged",
+								"label": "Yes",
+								"value": "Yes"
+							}
+						]
+					},
+					{
+						"id": "CanZoneBeBackSurged_result",
+						"name": "CanZoneBeBackSurged_result",
+						"type": "resultbox",
+						"label": "Stop",
+						"condition": "{CanZoneBeBackSurged} == 'No'",
+						"enableColor": "fail",
+						"disableColor": "incomplete"
+					},
+					{
+						"id": "CanZoneBeBackSurged_result_2",
+						"name": "CanZoneBeBackSurged_result_2",
+						"type": "resultbox",
+						"label": "Low side whisker pattern will need to be considered, clean out of debris on low side of hole will be difficult, evaluate completion at 15-20 skin units",
+						"enableColor": "warning",
+						"disableColor": "incomplete",
+						"condition": "{CanZoneBeBackSurged} == 'Hole Angle > 65'"
+					},
+					{
+						"id": "IsShaleBreaksGreaterOrEqual50WithinThePerInterval",
+						"name": "IsShaleBreaksGreaterOrEqual50WithinThePerInterval",
+						"type": "question",
+						"label": "Shale breaks ≥ 50ft within the perforation interval?",
+						"tooltip": "See reference 25: HRWP Best Practices Manual, in REFERENCES tab. For sands with ≥ 50'  shale breaks, stacked gravel packs should be considered.  Sand control failure data indicates no higher risk of failure for HRWP completions with blank perforated sections up to 50'.",
+						"condition": "{CanZoneBeBackSurged} == 'Yes'",
+
+						"options": [
+							{
+								"name": "IsShaleBreaksGreaterOrEqual50WithinThePerInterval",
+								"label": "Yes",
+								"value": "Yes"
+							},
+							{
+								"name": "IsShaleBreaksGreaterOrEqual50WithinThePerInterval",
+								"label": "No",
+								"value": "No"
+							}
+						]
+					},
+					{
+						"id": "IsShaleBreaksGreaterOrEqual50WithinThePerInterval_result",
+						"name": "IsShaleBreaksGreaterOrEqual50WithinThePerInterval_result",
+						"type": "resultbox",
+						"label": "Stop",
+						"condition": "{IsShaleBreaksGreaterOrEqual50WithinThePerInterval} == 'Yes'",
+						"enableColor": "fail",
+						"disableColor": "incomplete"
+					},
+					{
+						"id": "IsShaleBreaksGreaterOrEqual50WithinThePerInterval_result2",
+						"name": "IsShaleBreaksGreaterOrEqual50WithinThePerInterval_result2",
+						"type": "resultbox",
+						"label": "HRWP Feasible",
+						"enableColor": "pass",
+						"disableColor": "incomplete",
+						"condition": "{IsShaleBreaksGreaterOrEqual50WithinThePerInterval} == 'No'"
+					}
+				]
+			}
+		]
+	},
+	{
+		"id": "valueEconomicScreening",
+		"name": "valueEconomicScreening",
+		"label": "Value Economic Screening",
+		"innerTabs": [
+			{
+				"id": "cost_chgp",
+				"name": "cost_chgp",
+				"type": "tab",
+				"label": "Cost",
+				"content": [
+					{
+						"id": "WillHRWPWithBackSurgeAddCost",
+						"name": "WillHRWPWithBackSurgeAddCost",
+						"label": "Will a HRWP with a backsurge add cost to the completion concept?",
+						"type": "question",
+
+						"options": [
+							{
+								"name": "WillHRWPWithBackSurgeAddCost",
+								"label": "TLP - usually not, incremental rig time cost is outweighed by incremental pumping and material cost for a FP",
+								"value": "TLP - usually not, incremental rig time cost is outweighed by incremental pumping and material cost for a FP"
+							},
+							{
+								"name": "WillHRWPWithBackSurgeAddCost",
+								"label": "Subsea - yes: $2 mln",
+								"value": "Subsea - yes: $2 mln"
+							}
+						]
+					},
+					{
+						"id": "hrwpBacksurge_stop",
+						"name": "hrwpBacksurge_stop",
+						"type": "resultbox",
+						"label": "No cost benefit",
+						"enableColor": "fail",
+						"disableColor": "incomplete",
+						"condition": "{WillHRWPWithBackSurgeAddCost} == 'TLP - usually not, incremental rig time cost is outweighed by incremental pumping and material cost for a FP'"
+					},
+					{
+						"id": "hrwpBacksurge_pass",
+						"name": "hrwpBacksurge_pass",
+						"type": "resultbox",
+						"label": "Continue",
+						"enableColor": "pass",
+						"disableColor": "incomplete",
+						"condition": "{WillHRWPWithBackSurgeAddCost} == 'Subsea - yes: $2 mln'"
+					}
+				]
+			},
+            {
+				"id": "skin_chgp",
+				"name": "skin_chgp",
+				"type": "tab",
+				"label": "Skin",
+				"content": [
+					{
+						"id": "WillInflowPerformanceBeImpactedHigherSkinHRWP",
+						"name": "WillInflowPerformanceBeImpactedHigherSkinHRWP",
+						"label": "Will inflow performance be impacted by a higher skin HRWP?",
+						"tooltip": "Reservoir fluid type impact should be considered in the expected skin analysis for the different completion types (i.e. a more negative skin impact expected for gas or gas condensate wells for FP vs HRWP completions, based on a high non-darcy skin component  caused by the pressure drop & turbulent flow effect at the perf tunnels due to lower expected effective SPF for FP vs HRWP completions). See reference 24 in REFERENCES tab. Individual field/reservoir historical or analogue data should also be considered if available for gas or gas condensate wells.",
+						"type": "question",
+
+						"options": [
+							{
+								"name": "WillInflowPerformanceBeImpactedHigherSkinHRWP",
+								"label": "No (Completion is not sensitive to 5 incremental skin units)",
+								"value": "Completion is not sensitive to 5 incremental skin units"
+							},
+							{
+								"name": "WillInflowPerformanceBeImpactedHigherSkinHRWP",
+								"label": "Yes  (Use 5 total skin units for FP compared to 10 total skin units for a HRWP)",
+								"value": "Use 5 total skin units for FP compared to 10 total skin units for a HRWP"
+							}
+						]
+					},
+					{
+						"id": "skinHRWP_stop",
+						"name": "skinHRWP_stop",
+						"type": "resultbox",
+						"label": "No cost benefit",
+						"enableColor": "fail",
+						"disableColor": "incomplete",
+						"condition": "{WillInflowPerformanceBeImpactedHigherSkinHRWP} == 'Completion is not sensitive to 5 incremental skin units'"
+					},
+					{
+						"id": "skinHRWP_pass",
+						"name": "skinHRWP_pass",
+						"type": "resultbox",
+						"label": "Continue",
+						"enableColor": "pass",
+						"disableColor": "incomplete",
+						"condition": "{WillInflowPerformanceBeImpactedHigherSkinHRWP} == 'Use 5 total skin units for FP compared to 10 total skin units for a HRWP'"
+					}
+				]
+			},
+			{
+				"id": "other_considerations",
+				"name": "other_considerations",
+				"type": "tab",
+				"label": "Other Considerations",
+				"content": [
+					{
+						"id": "casingPressureLimits",
+						"name": "casingPressureLimits",
+						"label": "Casing pressure limits and liner tops may limit ability to perform a F&P completion with a live annulus, or require a HRWP to be pumped.",
+						"type": "statement"
+					},
+					{
+						"id": "differentialDepletionReserviour",
+						"name": "differentialDepletionReserviour",
+						"label": "Differential depletion within the reservoir may impact detailed design of the F&P  or HRWP completion.",
+						"type": "statement"
+					},
+					{
+						"id": "fractureToWelboreConnectivity",
+						"name": "fractureToWelboreConnectivity",
+						"label": "FRACTURE TO WELBORE CONNECTIVITY: Fractures propagate perpendicular to the minimum principal stress.  Typically hole angle and wellbore orientation are not specifically designed based on the reservoir rock stress state in low modulus, unconsolidated GOM  formations.  Although, there is industry data that indicates this is a more important design factor in fields with higher UCS, more compentent rock. Ref #39 includes a more detailed discussion on this fracture design consideration.",
+						"type": "statement"
+					},
+					{
+						"id": "sandControlReliability",
+						"name": "sandControlReliability",
+						"label": "Reliability: Sand Control Reliability differences should be included in the value proposition as summarized by reference 15, which was taken from the CET - Well Operating Envelope Study White Paper, January 2018 (See REFERENCES tab).",
+						"type": "statement"
+					}
+				]
+			}
+		]
+	}
+]
