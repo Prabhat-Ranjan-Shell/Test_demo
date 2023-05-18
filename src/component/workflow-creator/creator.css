@@ -1,0 +1,8 @@
+/* div {border: 1px solid gray; width: 15em; height: 5em; overflow-y: scroll;}
+button {float: right;} */
+
+.clip-copy {
+    position: absolute;
+    margin-left: -90px;
+    margin-top: 25px;
+}
