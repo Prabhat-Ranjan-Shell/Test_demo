@@ -52,7 +52,7 @@ export const data = {
         {
             label: 'Projects count',
             data: [40, 50, 45, 34, 76, 80],
-            backgroundColor: 'rgba(205, 235, 255)',
+            backgroundColor: 'rgb(25, 118, 210)',
         }
     ],
 };
