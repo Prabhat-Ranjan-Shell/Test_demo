@@ -1,0 +1,474 @@
+{
+    "id": "fd889c4c-447b-410d-b3b0-2eefcf47f2bb",
+    "projectName": "Test_Project_2",
+    "workflows": [
+        {
+            "id": "5c181386-1448-4bd4-8246-5ebb0993113e",
+            "isTabDetailsPresent": false,
+            "tabsDetails": {
+                "technicalFeasibility": [
+                    {
+                        "selectedColor": "green",
+                        "tabId": "assumption_question_mz",
+                        "tabLabel": "Assumptions for Multi-Zone Well Feasibility Work Flow"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "A stacked selective multi-zone system could be installed and a through tubing (CT/SL) intervention executed several months after completion to commingle well. Note that in most (but not all) cases an intervention on a subsea well out weighs the incremental cost for a smart well.",
+                        "tabId": "commingle_differential_pressure",
+                        "tabLabel": "Commingle Differential Pressure"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Proceed with standard BSEE engagment timelines/strategy",
+                        "tabId": "regulatory_screening",
+                        "tabLabel": "Regulatory Screening Requirements for Commingling"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "Evaluate Cased Hole option -- go to Casing Size Screening module for CH options.",
+                        "tabId": "OH_Screening",
+                        "tabLabel": "OH Screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "Cased hole systems - proceed to casing size screening",
+                        "tabId": "zonal_isolation",
+                        "tabLabel": "Zonal Isolation Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "",
+                        "tabId": "breaker_screeening",
+                        "tabLabel": "DIF and Breaker Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Trajectory feasible",
+                        "tabId": "drillingCompletionFeasibility",
+                        "tabLabel": "Drilling & Completion Feasibility"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "Further evaluate future wellbore utility trade offs with commingle MZ well (NOT SHOWSTOPPER)",
+                        "tabId": "secondTierAssessment",
+                        "tabLabel": "Second Tier Assessment"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "sandControlFesibility",
+                        "tabLabel": "OH Sand Control Feasibility - SAS Screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "tabId": "OHGPCarrierFluidCompatibilityScreening_MZ",
+                        "tabLabel": "OHGP/Gravel Pack Carrier Fluid Compatibility Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "OHGP_OHSAS_technically_feasible",
+                        "tabLabel": "OHSAS or OHGP technical feasibility"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "See reference 35 Multi-Zone Comparison Summary for available solutions",
+                        "tabId": "Casing_Size_Screening",
+                        "tabLabel": "Casing Size Screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "See reference 35 Multi-Zone Comparison Summary  for available solutions; >6 stages will eliminate numerous options",
+                        "tabId": "Stage_Count_Screening",
+                        "tabLabel": "Stage Count Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Pass - continue technical screening",
+                        "tabId": "lower_completion_screening",
+                        "tabLabel": "Cased Hole Lower Completion Installation Screening"
+                    },
+                    {
+                        "selectedColor": "red",
+                        "tabId": "sand_control_screening",
+                        "tabLabel": "Stimulation/Sand Control Screening"
+                    }
+                ],
+                "valueEconomicScreening": [
+                    {
+                        "selectedColor": "gray",
+                        "tabId": "cost_screening",
+                        "tabLabel": "Cost Screening"
+                    },
+                    {
+                        "selectedColor": "gray",
+                        "tabId": "Differential_Depletion_Screening",
+                        "tabLabel": "Differential Depletion Screening"
+                    },
+                    {
+                        "selectedColor": "gray",
+                        "tabId": "zonal_EUR_differences_screening",
+                        "tabLabel": "Zonal EUR Differences Screening"
+                    },
+                    {
+                        "selectedColor": "gray",
+                        "tabId": "accelerated_production_or_EOFL_screening",
+                        "tabLabel": "Accelerated Production or EOFL Screening"
+                    },
+                    {
+                        "selectedColor": "gray",
+                        "tabId": "waterflood_or_water_production_screening",
+                        "tabLabel": "Waterflood or Water Production Screening"
+                    },
+                    {
+                        "selectedColor": "gray",
+                        "tabId": "secondary_WRFM_value_screening",
+                        "tabLabel": "Secondary WRFM Value Screening"
+                    },
+                    {
+                        "selectedColor": "gray",
+                        "tabId": "productionReservoirModelling",
+                        "tabLabel": "Production & Reservoir Modelling"
+                    }
+                ]
+            },
+            "technicalFeasibilityColor": "red",
+            "valueEconomicScreeningColor": "gray",
+            "workflowName": "Multi Zone System",
+            "workflowStatusColor": "red"
+        },
+        {
+            "id": "0ce8ad06-6941-4913-bc66-c3f1064d4f5a",
+            "isTabDetailsPresent": false,
+            "tabsDetails": {
+                "technicalFeasibility": [
+                    {
+                        "selectedColor": "green",
+                        "tabId": "assumption_question_SCCHGP",
+                        "tabLabel": "Assumptions/Questions for Stacked Commingle CHGP assessment Work Flow"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "tabId": "commingle_differential_pressure",
+                        "tabLabel": "Regulatory Requirement for Commingle Differential Pressure"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "tabId": "regulatory_screening",
+                        "tabLabel": "Regulatory Screening Requirements for Commingling"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "lowerCompletionInstallationScreening",
+                        "tabLabel": "Lower Completion Installation Screening"
+                    }
+                ],
+                "valueEconomicScreening": [
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Include Savings in NPV Calcs $75 mln SS $50 mln TLP",
+                        "tabId": "costScreening",
+                        "tabLabel": "Cost"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "A plug could be installed to isolate the lower zone. Note that in most cases an intervention on a subsea well out weighs the incremental cost for a smart well.",
+                        "tabId": "zonalEurDifferencesScreening",
+                        "tabLabel": "Zonal EUR Differences"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "acceleratedProductionEoflScreening",
+                        "tabLabel": "Accelerated Production or EOFL"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "productionReservoirModelling",
+                        "tabLabel": "Production & Reservoir Modelling"
+                    }
+                ]
+            },
+            "technicalFeasibilityColor": "orange",
+            "valueEconomicScreeningColor": "orange",
+            "workflowName": "Stack Commingle CHGP",
+            "workflowStatusColor": "orange"
+        },
+        {
+            "id": "e138b826-94ee-402c-b2e5-0eec37fa401c",
+            "isTabDetailsPresent": false,
+            "tabsDetails": {
+                "technicalFeasibility": [
+                    {
+                        "selectedColor": "green",
+                        "tabId": "assumption_question_SSCHGP",
+                        "tabLabel": "Assumptions/Questions for Stacked  Selective CHGP assessment Work Flow"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Evaluate technical risks associated with performing a short hookup i.e. less reserve to fill void space Pass - continue technical screening",
+                        "tabId": "lower_completion_installtion_screening",
+                        "tabLabel": "Lower Completion Installation Screening"
+                    }
+                ],
+                "valueEconomicScreening": [
+                    {
+                        "selectedColor": "green",
+                        "tabId": "cost_screening",
+                        "tabLabel": "Cost Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "zonal_EUR_differences_screening",
+                        "tabLabel": "Zonal EUR Differences Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "accelerated_production_or_EOFL_screening",
+                        "tabLabel": "Accelerated Production or EOFL Screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "tabId": "waterflood_or_water_production_screening",
+                        "tabLabel": "Waterflood or Water Production Screening"
+                    },
+                    {
+                        "selectedColor": "purple",
+                        "selectedLabel": "No incremental economic benefit",
+                        "tabId": "productionReservoirModelling",
+                        "tabLabel": "Production & Reservoir Modelling"
+                    }
+                ]
+            },
+            "technicalFeasibilityColor": "green",
+            "valueEconomicScreeningColor": "purple",
+            "workflowName": "Stack Selective CHGP",
+            "workflowStatusColor": "purple"
+        },
+        {
+            "id": "0f8f4d4d-892b-4a0d-8cdf-ada61d7dab80",
+            "isTabDetailsPresent": false,
+            "tabsDetails": {
+                "technicalFeasibility": [
+                    {
+                        "selectedColor": "green",
+                        "tabId": "assumption_question_sw",
+                        "tabLabel": "Assumptions for Smart Well Feasibility Work Flow"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "First and secondary Regulatory requirement met",
+                        "tabId": "regulatory_screening",
+                        "tabLabel": "Regulatory Screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "Pass- continue technical screening",
+                        "tabId": "minimum_casing_size_screening",
+                        "tabLabel": "Minimum casing size screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Pass - continue technical screening",
+                        "tabId": "tlp_surface_control_unit_screening",
+                        "tabLabel": "TLP surface control unit screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "Investigate schedule impact",
+                        "tabId": "subsea_control_capability_screening",
+                        "tabLabel": "Subsea Control Capability Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Pass - continue technical screening",
+                        "tabId": "wellhead_equipment_feasibility",
+                        "tabLabel": "Wellhead Equipment Feasibility"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Evaluate technical risks associated with performing a short hookup i.e. less reserve to fill void space Pass - continue technical screening",
+                        "tabId": "lower_completion_installtion_screening",
+                        "tabLabel": "Lower Completion Installation Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "icv_operability",
+                        "tabLabel": "ICV Operability"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Pass - continue technical screening",
+                        "tabId": "casing_metallurgy",
+                        "tabLabel": "Casing Metallurgy"
+                    }
+                ],
+                "valueEconomicScreening": [
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "-Include Savings in NPV Calcs $75 mln SS $50 mln TLP",
+                        "tabId": "cost_screening",
+                        "tabLabel": "Cost Screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "tabId": "commingle_differential_pressure",
+                        "tabLabel": "Commingle Differential Pressure"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "differential_depletion_screening",
+                        "tabLabel": "Differential Depletion Screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "tabId": "zonal_EUR_differences_screening",
+                        "tabLabel": "Zonal EUR Differences Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Pass - Continue to screen for additional applicable Smart Well benefits. Quantify value of production acceleration via economic modelling",
+                        "tabId": "accelerated_production_or_EOFL_screening",
+                        "tabLabel": "Accelerated Production or EOFL Screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "Continue value/economic screening for applicable smart well benefits.",
+                        "tabId": "waterflood_or_water_production_screening",
+                        "tabLabel": "Waterflood or Water Production Screening"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Capture incremental NPV in value assessment Capture incremental VOI value assessment",
+                        "tabId": "secondary_WRFM_value_screening",
+                        "tabLabel": "Secondary WRFM Value Screening"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "Continue value/economic screening for applicable smart well benefits.",
+                        "tabId": "production_and_reservoir_modelling",
+                        "tabLabel": "Production & Reservoir Modelling"
+                    }
+                ]
+            },
+            "technicalFeasibilityColor": "orange",
+            "valueEconomicScreeningColor": "orange",
+            "workflowName": "Smart Well",
+            "workflowStatusColor": "orange"
+        },
+        {
+            "id": "6ed93c6b-500a-4f7e-bfd4-80a01e67aeb0",
+            "isTabDetailsPresent": false,
+            "tabsDetails": {
+                "technicalFeasibility": [
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Post Perf & Post Pack Fluid Loss Pills are commercially available.",
+                        "tabId": "fluidsFeasibility",
+                        "tabLabel": "Fluids Feasiblity"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "selfScalingFeasibility",
+                        "tabLabel": "Self-Scaling Tolerance Feasibility "
+                    },
+                    {
+                        "selectedColor": "red",
+                        "tabId": "chSandFeasilibityScreening",
+                        "tabLabel": "CH Sand Control Feasibility - Frac Pack (FP)"
+                    },
+                    {
+                        "selectedColor": "red",
+                        "tabId": "HRWPScreening",
+                        "tabLabel": "CH Sand Control Feasibility \u2013 High Rate Water Pack (HRWP)"
+                    }
+                ],
+                "valueEconomicScreening": [
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "FP to have value benefit over HRWP",
+                        "tabId": "cost_chgp",
+                        "tabLabel": "Cost"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "FP to have value benefit over HRWP",
+                        "tabId": "skin_chgp",
+                        "tabLabel": "Skin"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "other_considerations",
+                        "tabLabel": "Other Considerations"
+                    }
+                ]
+            },
+            "technicalFeasibilityColor": "orange",
+            "valueEconomicScreeningColor": "green",
+            "workflowName": "Single CHGP",
+            "workflowStatusColor": "orange"
+        },
+        {
+            "id": "470f9844-9c9d-4b55-95d5-40f1100438d9",
+            "isTabDetailsPresent": false,
+            "tabsDetails": {
+                "technicalFeasibility": [
+                    {
+                        "selectedColor": "red",
+                        "tabId": "wellTypeSelection",
+                        "tabLabel": "Well Type Selection"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Trajectory feasible",
+                        "tabId": "drillingCompletionFeasibility",
+                        "tabLabel": "Drilling & Completion Feasibility"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "OH Horizontal Technically Feasible",
+                        "tabId": "secondTierAssessment",
+                        "tabLabel": "Second Tier Assessment"
+                    },
+                    {
+                        "selectedColor": "orange",
+                        "selectedLabel": "Confirm we are willing to take that risk",
+                        "tabId": "SASScreening",
+                        "tabLabel": "SAS Screening"
+                    },
+                    {
+                        "selectedColor": "red",
+                        "tabId": "OHGPCarrierFluidCompatibilityScreening_OH",
+                        "tabLabel": "OHGP/Gravel Pack Carrier Fluid Compatibility Screening"
+                    }
+                ],
+                "valueEconomicScreening": [
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Cost Benefit Realised. Driling duration reduction usually seen in Subsea(~$5mln). Driling duration reduction not usually seen in TLP/DVA.",
+                        "tabId": "cost",
+                        "tabLabel": "Cost"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "rate",
+                        "tabLabel": "Rate"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "selectedLabel": "Model OH higher PI over time after water breakthrough (compared to CH) +XX BBLS",
+                        "tabId": "volume",
+                        "tabLabel": "Volume"
+                    },
+                    {
+                        "selectedColor": "green",
+                        "tabId": "costRateVolume",
+                        "tabLabel": "Significant cost, rate or volume benefit"
+                    }
+                ]
+            },
+            "technicalFeasibilityColor": "red",
+            "valueEconomicScreeningColor": "green",
+            "workflowName": "Open Hole Horizontal",
+            "workflowStatusColor": "red"
+        }
+    ]
+}

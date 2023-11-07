@@ -1,0 +1,280 @@
+[
+    {
+        "id": "56a64307-3294-4446-a026-393a9e1ddfc4",
+        "name": "Alaska",
+        "code": "Alaska",
+        "lineOfBusinessId": "e5bf4112-f1b1-43a5-89fc-b8c642100efa",
+        "countryId": "b1bfefc4-6f65-49d3-8bce-d46aa48bc83f",
+        "isActive": false,
+        "companies": [
+            {
+                "id": "70301f9c-c525-49f4-bf60-51118895a02e",
+                "name": "ALASKA",
+                "operatingUnitId": "56a64307-3294-4446-a026-393a9e1ddfc4",
+                "edmRegion": "UA"
+            }
+        ]
+    },
+    {
+        "id": "0f09e79e-612d-4752-a483-4ad456f125ec",
+        "name": "BG Bolivia Exploration",
+        "code": "BG Bolivia Exploration",
+        "lineOfBusinessId": "ec6bf16d-4ab1-4f85-996d-320a8947d9ab",
+        "countryId": "0968dee4-f3ca-46bb-9165-1d25f6618f96",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "455b845c-69a1-42b3-bd63-72290787c58d",
+                "name": "BOLIVIA",
+                "operatingUnitId": "0f09e79e-612d-4752-a483-4ad456f125ec",
+                "edmRegion": "UA"
+            }
+        ]
+    },
+    {
+        "id": "4c5db37f-ab9e-4b39-9a5f-7f9d66e807cd",
+        "name": "BG Tanzania Exploration",
+        "code": "BG Tanzania Exploration",
+        "lineOfBusinessId": "e5bf4112-f1b1-43a5-89fc-b8c642100efa",
+        "countryId": "ad18bbc6-cd42-460b-a5d0-578c4105a470",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "8b8c675f-6962-4e42-97c7-ff34a146711d",
+                "name": "BG TANZANIA",
+                "operatingUnitId": "4c5db37f-ab9e-4b39-9a5f-7f9d66e807cd",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "e33cdb1b-2fee-43bf-8c87-9c5a3c9861e0",
+        "name": "Brasil",
+        "code": "Brasil",
+        "lineOfBusinessId": "e5bf4112-f1b1-43a5-89fc-b8c642100efa",
+        "countryId": "e3823114-05d1-4718-adf6-db9717e28397",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "d9e6b165-c5f8-4edb-814c-1dc2251d7f49",
+                "name": "SBEP",
+                "operatingUnitId": "e33cdb1b-2fee-43bf-8c87-9c5a3c9861e0",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "e44f0d98-5224-4dc4-b6bc-83cb52221d29",
+        "name": "Canada Exploration",
+        "code": "Canada Exploration",
+        "lineOfBusinessId": "e5bf4112-f1b1-43a5-89fc-b8c642100efa",
+        "countryId": "40a2d90e-3c19-4f47-be96-98155ac699ee",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "ba3dacca-5a90-4c71-83a1-1eda771c5a7a",
+                "name": "FRONTIER",
+                "operatingUnitId": "e44f0d98-5224-4dc4-b6bc-83cb52221d29",
+                "edmRegion": "UA"
+            }
+        ]
+    },
+    {
+        "id": "5a76e4d4-19c7-4a57-a968-1421a8f1d10b",
+        "name": "French Guiana",
+        "code": "French Guiana",
+        "lineOfBusinessId": "e5bf4112-f1b1-43a5-89fc-b8c642100efa",
+        "countryId": "3fb54f85-fcaf-4d4f-903b-d23374ac3612",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "35432532-17f2-4a64-8b65-da078add5853",
+                "name": "GUYANAS",
+                "operatingUnitId": "5a76e4d4-19c7-4a57-a968-1421a8f1d10b",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "c70a7d2a-29e7-4d51-9e4b-8bbd62084e76",
+        "name": "Gulf of Mexico",
+        "code": "Gulf of Mexico",
+        "lineOfBusinessId": "e5bf4112-f1b1-43a5-89fc-b8c642100efa",
+        "countryId": "b1bfefc4-6f65-49d3-8bce-d46aa48bc83f",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "f6df41b3-95fe-4c38-a0a4-467581628d88",
+                "name": "GULF OF MEXICO",
+                "operatingUnitId": "c70a7d2a-29e7-4d51-9e4b-8bbd62084e76",
+                "edmRegion": "UIE"
+            },
+            {
+                "id": "53668d54-a722-4cd0-90f7-9ab9133207b2",
+                "name": "IRON IDLE",
+                "operatingUnitId": "c70a7d2a-29e7-4d51-9e4b-8bbd62084e76",
+                "edmRegion": "UA"
+            }
+        ]
+    },
+    {
+        "id": "22ed041c-6c66-4745-9b39-6879635b0a59",
+        "name": "Gulf Of Mexico",
+        "code": "Shell Netherlands",
+        "lineOfBusinessId": "9db136f6-6448-4d41-ad78-fa74bb56e13a",
+        "countryId": "4a7f96b7-3b45-4c73-9071-6904d504db60",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "6554b092-f0a3-4756-89ed-e2fe971ebd31",
+                "name": "SHELL NL",
+                "operatingUnitId": "22ed041c-6c66-4745-9b39-6879635b0a59",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "5df3d2d2-8ec7-4e6d-a232-bbc158f26449",
+        "name": "Mexico",
+        "code": "Mexico",
+        "lineOfBusinessId": "e5bf4112-f1b1-43a5-89fc-b8c642100efa",
+        "countryId": "cb870580-d82e-4ae7-9e80-f3173ac7391e",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "b134b338-8953-4692-9a47-71d938d3363a",
+                "name": "MEXICO",
+                "operatingUnitId": "5df3d2d2-8ec7-4e6d-a232-bbc158f26449",
+                "edmRegion": "UA"
+            }
+        ]
+    },
+    {
+        "id": "56a33231-1dd0-4397-846b-0b19c9b8b1c4",
+        "name": "Norske Shell",
+        "code": "Norske Shell",
+        "lineOfBusinessId": "9db136f6-6448-4d41-ad78-fa74bb56e13a",
+        "countryId": "0432cd8c-a311-4197-bfe5-75144506f747",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "dc8d42fc-fb20-4521-963f-cf29028fb364",
+                "name": "A/S NORSKE SHELL",
+                "operatingUnitId": "56a33231-1dd0-4397-846b-0b19c9b8b1c4",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "a59d71f4-06dc-4aaf-a2fd-d0407bec1817",
+        "name": "Permian",
+        "code": "Permian",
+        "lineOfBusinessId": "ec6bf16d-4ab1-4f85-996d-320a8947d9ab",
+        "countryId": "b1bfefc4-6f65-49d3-8bce-d46aa48bc83f",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "6e3e5331-44f4-461e-bff2-931fcebecb66",
+                "name": "PERMIAN",
+                "operatingUnitId": "a59d71f4-06dc-4aaf-a2fd-d0407bec1817",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "a25b78e2-e575-48a2-979b-87b23a7fc335",
+        "name": "Sarawak",
+        "code": "Sarawak",
+        "lineOfBusinessId": "fce751f3-adcb-458f-ad1e-02fd3bfb08ae",
+        "countryId": "7c59cdbb-a0c5-4a2f-88c6-e07f2584086e",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "c863cf90-75ea-4dd4-b043-021c04119d19",
+                "name": "Shell EPA Malaysia (Sarawak)",
+                "operatingUnitId": "a25b78e2-e575-48a2-979b-87b23a7fc335",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "0353efac-ed10-4377-b2b3-aa49e510925d",
+        "name": "SCAN",
+        "code": "SCAN",
+        "lineOfBusinessId": "ec6bf16d-4ab1-4f85-996d-320a8947d9ab",
+        "countryId": "40a2d90e-3c19-4f47-be96-98155ac699ee",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "ab5b7b37-8ce5-43b1-ac48-7675bf2901cd",
+                "name": "GROUNDBIRCH",
+                "operatingUnitId": "0353efac-ed10-4377-b2b3-aa49e510925d",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "1b2bae3c-0ae0-447b-862c-194731f97a5d",
+        "name": "SPDC",
+        "code": "SPDC",
+        "lineOfBusinessId": "9db136f6-6448-4d41-ad78-fa74bb56e13a",
+        "countryId": "abf50a24-b4fe-4199-8ffd-b7e87ee956e4",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "e37f38a5-6eea-4598-af3e-d8e88ef5ab58",
+                "name": "EPG_SPDC",
+                "operatingUnitId": "1b2bae3c-0ae0-447b-862c-194731f97a5d",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "85df7682-2e46-40d5-8743-7a693e637c69",
+        "name": "T&T Development",
+        "code": "T&T Development",
+        "lineOfBusinessId": "e5bf4112-f1b1-43a5-89fc-b8c642100efa",
+        "countryId": "0247ea5f-f8b3-43d7-ad85-6b8b2b21f6a8",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "ddfafc67-137f-4244-b685-9ee1b03208ba",
+                "name": "TRINIDAD & TOBAGO",
+                "operatingUnitId": "85df7682-2e46-40d5-8743-7a693e637c69",
+                "edmRegion": "UA"
+            }
+        ]
+    },
+    {
+        "id": "dadca436-0cd4-4996-a5a8-8d7700b6d23f",
+        "name": "UK Offshore Operated",
+        "code": "UK Offshore Operated",
+        "lineOfBusinessId": "9db136f6-6448-4d41-ad78-fa74bb56e13a",
+        "countryId": "7880c096-c1ff-419d-b1f1-fc796af1a62a",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "faa20ccf-4e85-4876-a5d2-a043808d9820",
+                "name": "SHELL UK - NELSON + PIERCE",
+                "operatingUnitId": "dadca436-0cd4-4996-a5a8-8d7700b6d23f",
+                "edmRegion": "UIE"
+            }
+        ]
+    },
+    {
+        "id": "2b9f1f5c-d582-444b-891f-1dff58d3f6ab",
+        "name": "UNC LAO",
+        "code": "UNC LAO",
+        "lineOfBusinessId": "ec6bf16d-4ab1-4f85-996d-320a8947d9ab",
+        "countryId": "1576198f-2f0e-45a2-aff8-3364fce112c9",
+        "isActive": true,
+        "companies": [
+            {
+                "id": "5070b30d-5932-49bd-a440-5d906d9dafec",
+                "name": "LATIN AMERICA ONSHORE",
+                "operatingUnitId": "2b9f1f5c-d582-444b-891f-1dff58d3f6ab",
+                "edmRegion": "UIE"
+            }
+        ]
+    }
+]

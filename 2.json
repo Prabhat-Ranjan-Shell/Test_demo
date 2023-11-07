@@ -1,0 +1,146 @@
+{
+    "id": "fbe675c9-3c4e-4488-a399-821e967d3066",
+    "updatedBy": "Prabhat.P.Ranjan2@shell.com",
+    "workflows": {
+        "id": "6ed93c6b-500a-4f7e-bfd4-80a01e67aeb0",
+        "isTabDetailsPresent": false,
+        "tabsDetails": {
+            "technicalFeasibility": [
+                {
+                    "selectedColor": "green",
+                    "selectedLabel": "DIF Feasible",
+                    "tabId": "wellTypeSelection",
+                    "tabLabel": "Well Type Selection"
+                },
+                {
+                    "selectedColor": "gray",
+                    "selectedLabel": null,
+                    "tabId": "drillingCompletionFeasibility",
+                    "tabLabel": "Drilling & Completion Feasibility"
+                },
+                {
+                    "selectedColor": "gray",
+                    "selectedLabel": null,
+                    "tabId": "secondTierAssessment",
+                    "tabLabel": "Second Tier Assessment"
+                },
+                {
+                    "selectedColor": "gray",
+                    "selectedLabel": null,
+                    "tabId": "SASScreening",
+                    "tabLabel": "SAS Screening"
+                },
+                {
+                    "selectedColor": "gray",
+                    "selectedLabel": null,
+                    "tabId": "OHGPCarrierFluidCompatibilityScreening",
+                    "tabLabel": "OHGP/Gravel Pack Carrier Fluid Compatibility Screening"
+                }
+            ],
+            "valueEconomicScreening": [
+                {
+                    "selectedColor": "gray",
+                    "selectedLabel": null,
+                    "tabId": "cost",
+                    "tabLabel": "Cost"
+                },
+                {
+                    "selectedColor": "gray",
+                    "selectedLabel": null,
+                    "tabId": "rate",
+                    "tabLabel": "Rate"
+                },
+                {
+                    "selectedColor": "gray",
+                    "selectedLabel": null,
+                    "tabId": "volume",
+                    "tabLabel": "Volume"
+                },
+                {
+                    "selectedColor": "gray",
+                    "selectedLabel": null,
+                    "tabId": "costRateVolume",
+                    "tabLabel": "Significat cost, rate or volume benefit"
+                }
+            ]
+        },
+        "technicalFeasibility": {
+            "CanScaleBeRemdiated": {
+                "ccat": "None"
+            },
+            "CanZoneBeBackSurged": {
+                "ccat": "None"
+            },
+            "DoesOccuresEndOfCompletionLifecycleLowImpactToEUR": {
+                "ccat": "null"
+            },
+            "DoesReservoirHasHistoryOfPoorInflow": {
+                "ccat": "null"
+            },
+            "HRWPScreening-comment": [],
+            "IsBHTLessThan300": {
+                "ccat": "> 300\u00ba F"
+            },
+            "IsCasingODLessThanOrEqual658": {
+                "ccat": "None"
+            },
+            "IsCementIsolationQuantityGood": {
+                "ccat": "None"
+            },
+            "IsHighRiskOfFracturingOutOfZoneWaterSandOrInZoneWaterLevel": {
+                "ccat": "null"
+            },
+            "IsHoleAngleGreaterThan65": {
+                "ccat": "None"
+            },
+            "IsIntervalLengthGreaterThan150": {
+                "ccat": "None"
+            },
+            "IsIntervalLengthGreaterThan300": {
+                "ccat": "null"
+            },
+            "IsLikelihoodOfPerformingScaleTreatmentsHigh": {
+                "ccat": "None"
+            },
+            "IsLowerPermOrHighlyCompetitiveReservoir": {
+                "ccat": "null"
+            },
+            "IsPostPerfPostPackFluidLossPillsAvailable": {
+                "ccat": "No"
+            },
+            "IsShaleBreaksGreaterOrEqual50": {
+                "ccat": "null"
+            },
+            "IsShaleBreaksGreaterOrEqual50WithinThePerInterval": {
+                "ccat": "null"
+            },
+            "IsShaleBreaksGreaterThanOrEqualTo40AndLessThanEqualTo50": {
+                "ccat": "null"
+            },
+            "chSandFeasilibityScreening-comment": [],
+            "fluidsFeasibility-comment": [],
+            "isShaleBreaksGreaterThanOrEqualTo30AndLessThanEqualTo40": {
+                "ccat": "null"
+            },
+            "selfScalingFeasibility-comment": []
+        },
+        "templateVersion": "single_chgp_v5",
+        "valueEconomicScreening": {
+            "WillHRWPWithBackSurgeAddCost": {
+                "ccat": "null"
+            },
+            "WillInflowPerformanceBeImpactedHigherSkinHRWP": {
+                "ccat": "null"
+            },
+            "cost_chgp-comment": [],
+            "disclaimerOtherConsiderations": {
+                "type": "disclaimer",
+                "value": "null"
+            },
+            "other_considerations-comment": [],
+            "skin_chgp-comment": []
+        },
+        "workflowName": "Single CHGP",
+        "workflowStatusColor": "red"
+    }
+}

@@ -1,0 +1,169 @@
+{
+    "id": "fbe675c9-3c4e-4488-a399-821e967d3066",
+    "updatedBy": "Prabhat.P.Ranjan2@shell.com",
+    "workflows": {
+        "id": "6ed93c6b-500a-4f7e-bfd4-80a01e67aeb0",
+        "isTabDetailsPresent": false,
+        "tabsDetails": {
+            "technicalFeasibility": [
+                {
+                    "tabId": "fluidsFeasibility",
+                    "tabLabel": "Fluids Feasiblity",
+                    "selectedColor": "red"
+                },
+                {
+                    "tabId": "selfScalingFeasibility",
+                    "tabLabel": "Self-Scaling Tolerance Feasibility ",
+                    "selectedColor": "gray"
+                },
+                {
+                    "tabId": "chSandFeasilibityScreening",
+                    "tabLabel": "CH Sand Control Feasibility - Frac Pack (FP)",
+                    "selectedColor": "gray"
+                },
+                {
+                    "tabId": "HRWPScreening",
+                    "tabLabel": "CH Sand Control Feasibility – High Rate Water Pack (HRWP)",
+                    "selectedColor": "gray"
+                }
+            ],
+            "valueEconomicScreening": [
+                {
+                    "tabId": "cost_chgp",
+                    "tabLabel": "Cost",
+                    "selectedColor": "gray"
+                },
+                {
+                    "tabId": "skin_chgp",
+                    "tabLabel": "Skin",
+                    "selectedColor": "gray"
+                },
+                {
+                    "tabId": "other_considerations",
+                    "tabLabel": "Other Considerations",
+                    "selectedColor": "gray"
+                }
+            ]
+        },
+        "technicalFeasibility": {
+            "IsBHTLessThan300": {
+                "ccat": "> 300º F",
+                "dwfs": null
+            },
+            "IsPostPerfPostPackFluidLossPillsAvailable": {
+                "ccat": "No",
+                "dwfs": null
+            },
+            "fluidsFeasibility-comment": [],
+            "DoesReservoirHasHistoryOfPoorInflow": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "DoesOccuresEndOfCompletionLifecycleLowImpactToEUR": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "CanScaleBeRemdiated": {
+                "ccat": "None",
+                "dwfs": null
+            },
+            "IsLikelihoodOfPerformingScaleTreatmentsHigh": {
+                "ccat": "None",
+                "dwfs": null
+            },
+            "selfScalingFeasibility-comment": [],
+            "IsHighRiskOfFracturingOutOfZoneWaterSandOrInZoneWaterLevel": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "IsCementIsolationQuantityGood": {
+                "ccat": "None",
+                "dwfs": null
+            },
+            "IsLowerPermOrHighlyCompetitiveReservoir": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "IsShaleBreaksGreaterOrEqual50": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "IsShaleBreaksGreaterThanOrEqualTo40AndLessThanEqualTo50": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "IsShaleBreaksGreaterThanOrEqualTo30AndLessThanEqualTo40": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "IsHoleAngleGreaterThan65": {
+                "ccat": "None",
+                "dwfs": null
+            },
+            "IsCasingODLessThanOrEqual658": {
+                "ccat": "None",
+                "dwfs": null
+            },
+            "IsIntervalLengthGreaterThan300": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "IsIntervalLengthGreaterThan150": {
+                "ccat": "None",
+                "dwfs": null
+            },
+            "chSandFeasilibityScreening-comment": [],
+            "CanZoneBeBackSurged": {
+                "ccat": "None",
+                "dwfs": null
+            },
+            "IsShaleBreaksGreaterOrEqual50WithinThePerInterval": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "HRWPScreening-comment": [],
+            "isShaleBreaksGreaterThanOrEqualTo30AndLessThanEqualTo40": {
+                "ccat": null
+            }
+        },
+        "templateVersion": "single_chgp_v5",
+        "valueEconomicScreening": {
+            "WillHRWPWithBackSurgeAddCost": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "cost_chgp-comment": [],
+            "WillInflowPerformanceBeImpactedHigherSkinHRWP": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "skin_chgp-comment": [],
+            "casingPressureLimits": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "differentialDepletionReserviour": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "fractureToWelboreConnectivity": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "sandControlReliability": {
+                "ccat": null,
+                "dwfs": null
+            },
+            "disclaimerOtherConsiderations": {
+                "type": "disclaimer",
+                "value": "null"
+            },
+            "other_considerations-comment": []
+        },
+        "workflowName": "Single CHGP",
+        "workflowStatusColor": "red",
+        "technicalFeasibilityColor": "red",
+        "valueEconomicScreeningColor": "gray"
+    },
+    "name": "single_chgp"
+}

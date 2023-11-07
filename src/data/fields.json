@@ -1,0 +1,452 @@
+[
+    {
+        "id": "32b9ee8f-2745-42fa-aa7f-8cb431191924",
+        "name": "- SPECIAL PROJECTS",
+        "edmFieldId": "1_00100000",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "a76ec068-76d6-45db-bc9d-c5c09731b7e9",
+        "name": "ALBATROSS",
+        "edmFieldId": "1_00300000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "820c6f10-c98a-468f-8992-29785890708b",
+        "name": "ANTIETAM",
+        "edmFieldId": "EdS2f5f2a6",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "50f9e3b9-800a-488c-b62d-358517294814",
+        "name": "APPOMATTOX",
+        "edmFieldId": "2NROr10nbu",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "23fee4e0-8fae-4eb9-954a-afc979546acd",
+        "name": "AUGER",
+        "edmFieldId": "1_00700000",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "4a7c529c-ee9e-4e0e-9597-705a74d1f86d",
+        "name": "BA A0019 - ALEX",
+        "edmFieldId": "1_00800000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "81da0dd1-8f6b-4a04-9c0c-3a6c7ea8503b",
+        "name": "BA A0019 - CROSSBONES",
+        "edmFieldId": "1_00900000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "6b72791b-790a-4a93-b5da-0b24287653f8",
+        "name": "BA A0019 - PICAROON",
+        "edmFieldId": "1_01000000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "708c34bb-87db-46db-adef-5e873aa7ff3a",
+        "name": "BOXER",
+        "edmFieldId": "1_02400000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "567a113e-3284-434a-8969-05dbaa24ee78",
+        "name": "CHEYENNE",
+        "edmFieldId": "1_03500000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "8a142898-9b86-499d-91b5-ebe6b07dacb2",
+        "name": "CONCEPT WELL PLANNING - UTM ZONE 15N",
+        "edmFieldId": "1Br9jqxMuu",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "05023af4-53d0-45e8-b346-99fe3b8ed843",
+        "name": "CONCEPT WELL PLANNING - UTM ZONE 16N",
+        "edmFieldId": "mEU18HCsZt",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "ece2abb1-d0d5-4d01-a1bf-f3dc25b31085",
+        "name": "COUGAR",
+        "edmFieldId": "1_04200000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "58db6a87-00e2-4c53-aa8c-bb02ec174eb4",
+        "name": "CREE",
+        "edmFieldId": "1_04300000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "04fac902-1366-4a75-94f1-f7b1ec36d800",
+        "name": "CROSBY",
+        "edmFieldId": "1_04400000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "310257e0-2f7e-4ba7-9cd5-ed6c6c6e56a7",
+        "name": "DW PRODUCTION - CONSTRUCTION",
+        "edmFieldId": "vwViFlDS6k",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "ded8cfd0-21d0-49b3-b54f-72a50a420eb8",
+        "name": "EAST BAY",
+        "edmFieldId": "3IRLuGCD2R",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "104e355e-ebb1-42e6-98b5-9f0849b6fc79",
+        "name": "EINSET",
+        "edmFieldId": "1_05000000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "a7e3ceae-cdaf-4fcb-8292-345972a14763",
+        "name": "ENCHILADA",
+        "edmFieldId": "1_05300000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "33724ac7-ee03-47df-9729-8bb48e15d5f2",
+        "name": "EUROPA",
+        "edmFieldId": "1_05400000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "6d7d42bb-550a-4d72-8db1-488b49d14f07",
+        "name": "FIJI",
+        "edmFieldId": "1_06100000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "ec36b9c9-78a5-4436-b38c-95d24e31629d",
+        "name": "FORT SUMTER",
+        "edmFieldId": "9pDxwRt7ER",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "78deb3aa-1fd5-4aaa-bea4-e9c117771b9c",
+        "name": "HABANERO",
+        "edmFieldId": "1_07300000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "3ae3ea40-e1a0-46bb-8e14-d334749335fa",
+        "name": "HI 154",
+        "edmFieldId": "09qt7S3Z00",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "a0ada69b-a6ef-4807-85cb-eac31b391f22",
+        "name": "JOSEPH",
+        "edmFieldId": "1_09200000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "b4a83d06-3102-4d8b-902f-d4de093eed37",
+        "name": "KAIKIAS",
+        "edmFieldId": "j3Fb60nJoj",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "9a9d766c-d1de-4bcd-98eb-f9c643a6664b",
+        "name": "KING",
+        "edmFieldId": "toADXykWfD",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "dbf971a3-7047-450d-92de-c84f28779454",
+        "name": "KNIGHT",
+        "edmFieldId": "QWmJj9HovJ",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "a465a9e5-21a4-4ea9-9025-82d20f6067b8",
+        "name": "LLANO",
+        "edmFieldId": "1_10400000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "aace1705-c4ba-4a08-9677-173f11892881",
+        "name": "LOUISIANA",
+        "edmFieldId": "a47dvu2aT1",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "795a299c-8c9a-45fa-b2c7-ca3e8b6137d9",
+        "name": "MACARONI",
+        "edmFieldId": "1_10600000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "e6fe8b55-3957-4cbc-a354-741e5430eca8",
+        "name": "MARS",
+        "edmFieldId": "1_11600000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "7246ae93-9b49-45a7-995c-fc35c1679e26",
+        "name": "MARS - BOREAS",
+        "edmFieldId": "1_11700000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "ea5ad732-0096-4c31-bab7-a4a711e3b90a",
+        "name": "MARS - DEIMOS",
+        "edmFieldId": "1_11800000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "569491e0-e935-4993-97cb-5ecd3e2bb2cd",
+        "name": "MARS - OLYMPUS",
+        "edmFieldId": "wdB1gL3vtn",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "ca2dbaea-6bd5-4636-849e-aa6fd82c43c1",
+        "name": "MARS SOUTHWEST",
+        "edmFieldId": "1_11900000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "08f9c079-31a8-4de3-8a26-5a7b807285b7",
+        "name": "MENSA",
+        "edmFieldId": "1_12400000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "0d47a766-6a03-4075-a4fa-1a9047f81f5c",
+        "name": "MORGUS",
+        "edmFieldId": "1_12800000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "18aee6a1-55f5-445d-bfdc-9097d2c7c298",
+        "name": "NA KIKA - NOV",
+        "edmFieldId": "1_13000000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "b8303775-a92b-4361-909a-df94c642bbe0",
+        "name": "NEW EDM CODE TEST",
+        "edmFieldId": "i8I6YVX9X5",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "e11820cd-f7f2-4ab6-971d-34cad719a10b",
+        "name": "NOZOMI",
+        "edmFieldId": "XVNqxf3c8o",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "622e3b4a-8ca7-4de6-988e-4c81db40d0c1",
+        "name": "NW_TAOS",
+        "edmFieldId": "1_13600000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "62942ce3-c267-4252-9c60-c61744dc8b3c",
+        "name": "OREGANO",
+        "edmFieldId": "1_13700000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "e53297ad-fcd5-4a05-b79e-4a396ef96f90",
+        "name": "PASTEL PINK",
+        "edmFieldId": "1_14100000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "7c538da4-04c6-4346-a8e4-0b3cd90e654b",
+        "name": "PERDIDO - FRIO HORIZONTALS",
+        "edmFieldId": "dhHJfpsOmJ",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "7372f12c-076c-498a-9e89-ce6320f8c149",
+        "name": "PERDIDO - GREAT WHITE",
+        "edmFieldId": "1_14600000",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "eac9657b-ea67-42db-8e92-235e026a9170",
+        "name": "PERDIDO - SILVERTIP",
+        "edmFieldId": "1_14700000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "8596c519-7959-4aac-ad53-83a4b73fc892",
+        "name": "PERDIDO - SSBS",
+        "edmFieldId": "1_14800000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "552f13f8-d589-40f6-96b7-fadd805c9684",
+        "name": "PERDIDO - TOBAGO",
+        "edmFieldId": "Rj8yik0yMV",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "b0e5674c-00db-4da2-bb0f-93ea8cbfbf53",
+        "name": "PERDIDO SPAR",
+        "edmFieldId": "baugdKoqtf",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "f410d004-e86f-4161-a386-66a1d3dd94c7",
+        "name": "PETERSBURG",
+        "edmFieldId": "8BkstRKHJU",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "7c91c82d-0dd3-4a63-be01-801b245496b8",
+        "name": "POPEYE",
+        "edmFieldId": "1_15300000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "025634c3-e72a-41ee-9748-f622cb28597e",
+        "name": "POWERNAP",
+        "edmFieldId": "uZNyiCtR7C",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "4cc7e99a-aa84-4a33-ae91-9528af2ac1d0",
+        "name": "PRINCESS",
+        "edmFieldId": "1_15600000",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "63d3d354-946d-4793-a42f-7bb7b0ab52cd",
+        "name": "QUEEN",
+        "edmFieldId": "DOb2rFIAmY",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "c6c6ef6e-f288-42af-81ac-408073b8eac8",
+        "name": "ROBUSTO",
+        "edmFieldId": "1_16100000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "516d7154-410d-4fd1-a86c-d65d9a2d109a",
+        "name": "ROCKY",
+        "edmFieldId": "1_16200000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "34f85f24-c0a1-4929-acee-c642cf7711b3",
+        "name": "RODAN",
+        "edmFieldId": "1_16300000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "512a6d58-bcb0-4cbf-81b2-cc65d2e6408c",
+        "name": "RYDBERG",
+        "edmFieldId": "yVZbSyVrQW",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "6f2f2db9-a3b6-4f35-9568-7cd400f436a7",
+        "name": "SACRUM",
+        "edmFieldId": "1_16500000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "1dd1e9a4-b20e-4b94-82bc-9cbf308eb2ae",
+        "name": "SALSA",
+        "edmFieldId": "1_16600000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "152d7581-4f2e-41ec-a112-fdbe9cfddc33",
+        "name": "SCOUT",
+        "edmFieldId": "1_16700000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "ae26d0cc-ddfd-4955-b495-f22c9d584f19",
+        "name": "SERRANO",
+        "edmFieldId": "1_16900000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "9de5452a-336b-4f68-9f8d-7eb6133f8ace",
+        "name": "SHILOH",
+        "edmFieldId": "1_17400000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "48236453-f259-4cee-94fb-73cbf79bd0f9",
+        "name": "SS 241",
+        "edmFieldId": "R6knZyNv7S",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "e7203090-9f25-406b-bf5b-5d2c01230cd2",
+        "name": "STONES",
+        "edmFieldId": "1_19000000",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "f8bcf8f4-cf07-4147-be40-d39827aac2e4",
+        "name": "SWEET PEA",
+        "edmFieldId": "1_19200000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "04fc1151-5751-403e-9480-db359c5ee546",
+        "name": "UNDEFINED CTT PROJECT",
+        "edmFieldId": "C6dgxCSye4",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "c00d6a86-a279-44ed-957f-5bebea19e7cb",
+        "name": "URSA",
+        "edmFieldId": "1_20300000",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "80108243-05af-48c7-89cb-d739146f0e3b",
+        "name": "UTILITY",
+        "edmFieldId": "dvasVquutj",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "de6c6424-782e-4c3a-bf08-a3722d2d5c81",
+        "name": "VITO",
+        "edmFieldId": "1t0BKQTehB",
+        "edmRegion": "UIE"
+    },
+    {
+        "id": "9a728f27-6d4d-446d-a326-7f3177473a03",
+        "name": "WMM TEST",
+        "edmFieldId": "TdspQDw4Ip",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "ae6afe5b-5af4-4064-877a-29a9a588757b",
+        "name": "WSOE Training Workshop 2018",
+        "edmFieldId": "FN6NiEaUj2",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "b70490c5-a0ea-4935-9e21-7e283cd66669",
+        "name": "WSOE Training Workshop 2019",
+        "edmFieldId": "QxaQks5wm7",
+        "edmRegion": "UA"
+    },
+    {
+        "id": "d5a39d5c-1e60-4c42-b0b2-f0a9004cb34e",
+        "name": "zCONCEPT-FIELD DEVELOPMENT PLANNING - UTM ZONE 16N",
+        "edmFieldId": "0blfQmR7vu",
+        "edmRegion": "UA"
+    }
+]

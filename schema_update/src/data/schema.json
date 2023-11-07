@@ -1,0 +1,1899 @@
+[
+    {
+        "id": "technicalFeasibility",
+        "name": "technicalFeasibility",
+        "label": "Technical Feasibility",
+        "innerTabs": [
+            {
+                "id": "assumption_question_mz",
+                "name": "assumption_question_mz",
+                "type": "tab",
+                "label": "Assumptions for Multi-Zone Well Feasibility Work Flow",
+                "content": [
+                    {
+                        "id": "assump_grass_roots_water",
+                        "name": "assump_grass_roots_water",
+                        "label": "Assumes a new (grass roots or blue water) well",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "assump_OH_CH_completion",
+                        "name": "assump_OH_CH_completion",
+                        "label": "OH or CH completion",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "assump_regulatory_requirements",
+                        "name": "assump_regulatory_requirements",
+                        "label": "Regulatory requirements for commingling are critical for MZ completion type selection",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "assump_commingled_or_stacked",
+                        "name": "assump_commingled_or_stacked",
+                        "label": "Assumes well will be commingle -OR- stacked selective; any SMART MZ systems (i.e. AFCS) should work through the SMART workflow",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "key_producible_zone",
+                        "name": "key_producible_zone",
+                        "label": "There are 2 or more producible zones in the wellbore.",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "key_uneconomic_to_warrant",
+                        "name": "key_uneconomic_to_warrant",
+                        "label": "There is an opportunity to obtain a zone that wouldn't have otherwise been produced since it is uneconomic to warrant it on well.",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "disclaimerAssumptionQuestions",
+                        "name": "disclaimerAssumptionQuestions",
+                        "label": "I acknowledge that I have read these assumptions / considerations and agree to all of these.",
+                        "type": "disclaimer"
+                    },
+                    {
+                        "id": "assumption_question_mz-comment",
+                        "name": "assumption_question_mz-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "commingle_differential_pressure",
+                "name": "commingle_differential_pressure",
+                "type": "tab",
+                "label": "Commingle Differential Pressure",
+                "tooltip": "Justification can also be made to BOEM to group independent sand lobes into a reservoir package when an initial field development plan is proposed (i.e. M4/M6 sands or M1/M2 sands at Mars).  This will allow for completing these sand packages without commingling approval during the production life cycle.  Also, when reservoirs are shown to be in pressure communication (i.e. upper and lower yellow sands at Mars) commingling approval will be granted beyond the 200 Δpsi limit.  Attached below are some Mars examples of these commingle completion types.  WM -50 at Perdido and Stones Wilcox  Multi-Zone Completions are also examples.",
+                "content": [
+                    {
+                        "name": "IsDifferentialPressureBetweenZoneGreaterThan200psi",
+                        "id": "IsDifferentialPressureBetweenZoneGreaterThan200psi",
+                        "label": "Is the differential pressures between the zones greater than 200 psi?",
+                        "tooltip": "Generally MZ systems are cost neutral with stacked completions for 2 zones/stages, but do have a cost advantage for completions with 3 or more zones/stages see Stage Count Screening module & <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(08)?csf=1&web=1&e=klH4du' target='_blank'>referece 8</a>.",
+                        "dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/PPFGBoreholeStability/BS",
+                        "dwfsTab": "PPFG",
+                        "type": "question",
+                        "options": [
+                            {
+                                "name": "IsDifferentialPressureBetweenZoneGreaterThan200psi",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "IsDifferentialPressureBetweenZoneGreaterThan200psi",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsDifferentialPressureGreaterThan200_result_warning",
+                        "name": "IsDifferentialPressureGreaterThan200_result_warning",
+                        "type": "resultbox",
+                        "label": "Continue",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete",
+                        "condition": "{IsDifferentialPressureBetweenZoneGreaterThan200psi} == 'No'"
+                    },
+                    {
+                        "name": "WillPressureEqualizeAllowingCommingledFlow",
+                        "id": "WillPressureEqualizeAllowingCommingledFlow",
+                        "label": "If one zone is produced for a brief period time (<6 months), will the pressure equalize, allowing for commingle flow?",
+                        "type": "question",
+                        "tooltip": "NOTE: Otherwise, the regulator needs to be engaged on a variance to the 200 psi requirement; this is especially important if reserves could otherwise not be economically produced.",
+                        "condition": "{IsDifferentialPressureBetweenZoneGreaterThan200psi} == 'Yes'",
+                        "dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/WellFunction/Perforating",
+                        "dwfsTab": "Well Function",
+                        "options": [
+                            {
+                                "name": "WillPressureEqualizeAllowingCommingledFlow",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "WillPressureEqualizeAllowingCommingledFlow",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsPressureEqualize_result_warning",
+                        "name": "IsPressureEqualize_result_warning",
+                        "type": "resultbox",
+                        "label": "A stacked selective multi-zone system could be installed and a through tubing (CT/SL) intervention executed several months after completion to commingle well. Note that in most (but not all) cases an intervention on a subsea well out weighs the incremental cost for a smart well.",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{WillPressureEqualizeAllowingCommingledFlow} == 'Yes'"
+                    },
+                    {
+                        "id": "IsPressureEqualize_result_warning_2",
+                        "name": "IsPressureEqualize_result_warning_2",
+                        "type": "resultbox",
+                        "label": "Smart Well would be required to commingle zones. NOTE: Work through the SMART Workflow",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{WillPressureEqualizeAllowingCommingledFlow} == 'No'"
+                    },
+                    {
+                        "id": "commingle_differential_pressure-comment",
+                        "name": "commingle_differential_pressure-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "regulatory_screening",
+                "name": "regulatory_screening",
+                "type": "tab",
+                "label": "Regulatory Screening Requirements for Commingling",
+                "tooltip": "These requirements are applicable for all commingling concepts.",
+                "content": [
+                    {
+                        "id": "IsFormationFluidCompatible",
+                        "name": "IsFormationFluidCompatible",
+                        "type": "question",
+                        "label": "Are the formation fluids compatible?",
+                        "tooltip": "NOTE: Per Shell Regulatory, BSEE requires a demonstration of fluid compatibility in order to approve a commingle permit. An approved commingle permit has been previously required prior to receive an approved completions APM. BSEE has accepted the following as proof of fluid compatibility. Compatibility of  both hydrocarbons and produced water is required. -Analog data -Geochemical finger printing demonstrating similar fluid properties i.e. similar densities and viscosities -Produced water compatibility testing (if samples exist) -Hydrocarbon compatibility testing (if samples exist) -Scale mitigations to be used if required during commingling -If chemical compatibility is an issue, provide details on compatibility control measure i.e. chemical injection through deep CIM. Evaluate if fluids are suitable for small radius/non-asphaltene scaling",
+                        "options": [
+                            {
+                                "name": "IsFormationFluidCompatible",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "IsFormationFluidCompatible",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsFormationFluidCompatible_result",
+                        "name": "IsFormationFluidCompatible_result",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "condition": "{IsFormationFluidCompatible} == 'No'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsFormationFluidCompatible_result_right",
+                        "name": "IsFormationFluidCompatible_result_right",
+                        "type": "resultbox",
+                        "label": "1st regulatory requirement met.",
+                        "condition": "{IsFormationFluidCompatible} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "zoneSelection",
+                        "name": "zoneSelection",
+                        "type": "question",
+                        "label": "Choose 1",
+                        "tooltip": "NOTE: If the total EUR of a well is increased, but the zonal EUR of the primary zone is impacted by adding an incremental zone that otherwise would not be obtained may be a justification for commingling. Further engagement with BSEE is likely to be required.",
+                        "options": [
+                            {
+                                "name": "zoneSelection",
+                                "label": "EUR of each zone of the Multi-Zone Well has equal or greater EUR than in a single zone well scenario. (Note: Utilize ''base case'' forecasts for modelling)",
+                                "value": "first"
+                            },
+                            {
+                                "name": "zoneSelection",
+                                "label": "There is a zone that can be obtained economically with a multi-zone well that wouldn't be obtained otherwise (uneconomical for a standalone well, no other planned penetrations).",
+                                "value": "second"
+                            },
+                            {
+                                "name": "zoneSelection",
+                                "label": "Neither of the above",
+                                "value": "neitherOfAbove"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsFormationFluidCompatible_result_1",
+                        "name": "IsFormationFluidCompatible_result_1",
+                        "type": "resultbox",
+                        "label": "2nd regulatory requirement met.",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete",
+                        "condition": "{zoneSelection} == 'first'"
+                    },
+                    {
+                        "id": "IsFormationFluidCompatible_result_2",
+                        "name": "IsFormationFluidCompatible_result_2",
+                        "type": "resultbox",
+                        "label": "2nd regulatory requirement met.",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{zoneSelection} == 'second'"
+                    },
+                    {
+                        "id": "IsFormationFluidCompatible_result_3",
+                        "name": "IsFormationFluidCompatible_result_3",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete",
+                        "condition": "{zoneSelection} == 'neitherOfAbove'"
+                    },
+                    {
+                        "id": "IsComminglingStrong",
+                        "name": "IsComminglingStrong",
+                        "type": "question",
+                        "label": "Is commingling justification \"strong\" or \"weak\"? Review \"story\" (proposal/justification) for commingling with Shell Regulatory. Reference 1 contains examples of previous commingle justifications.",
+                        "tooltip": "NOTE:  The total EUR associated with the multi-zone well concept will be determined towards the end of the concept assessment process as more detailed modelling would be required. <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(01)?csf=1&web=1&e=zRVbuu' target='_blank'>Reference 1</a>",
+                        "options": [
+                            {
+                                "name": "IsComminglingStrong",
+                                "label": "Strong & Routine Justification",
+                                "value": "Strong & Routine Justification"
+                            },
+                            {
+                                "name": "IsComminglingStrong",
+                                "label": "New or Weak Justification",
+                                "value": "New or Weak Justification"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "TotalEurAssociatedWithStackCommingle_result2",
+                        "name": "TotalEurAssociatedWithStackCommingle_result2",
+                        "type": "resultbox",
+                        "label": "Proceed with standard BSEE engagement timelines/strategy",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete",
+                        "condition": "{IsComminglingStrong} == 'Strong & Routine Justification'"
+                    },
+                    {
+                        "id": "TotalEurAssociatedWithStackCommingle_result",
+                        "name": "TotalEurAssociatedWithStackCommingle_result",
+                        "type": "resultbox",
+                        "label": "Consider early engagement with BSEE",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{IsComminglingStrong} == 'New or Weak Justification'"
+                    },
+                    {
+                        "id": "regulatory_screening-comment",
+                        "name": "regulatory_screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "OH_Screening",
+                "name": "OH_Screening",
+                "type": "tab",
+                "label": "OH Screening",
+                "content": [
+                    {
+                        "id": "IsOpenHoleCompletionFeasible",
+                        "name": "IsOpenHoleCompletionFeasible",
+                        "type": "question",
+                        "label": "Is an Open Hole completion feasible? COMPLETE OH SCREENING WORKFLOW: - DIF & Breaker Screening- D&C Feasibility- Second Tier Assessment",
+                        "options": [
+                            {
+                                "name": "IsOpenHoleCompletionFeasible",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsOpenHoleCompletionFeasible",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsOpenHoleCompletionFeasible_result",
+                        "name": "IsOpenHoleCompletionFeasible_result",
+                        "type": "resultbox",
+                        "label": "Evaluate Cased Hole option -- go to Casing Size Screening module for CH options.",
+                        "condition": "{IsOpenHoleCompletionFeasible} == 'No'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "AreAllFHBPOrStaticBHPLessThan5000",
+                        "name": "AreAllFHBPOrStaticBHPLessThan5000",
+                        "type": "question",
+                        "label": "During the production phase, are all differential pressures between zones <5,000 psi (based OH packer rating) for the life of completion.",
+                        "tooltip": "NOTE: Generally OH architecture may result in lower overall total D&C well costs, with potential production benefit. <br /> Whale has developed a procedure to test OH packers at >5000 psi differential.",
+                        "condition": "{IsOpenHoleCompletionFeasible} == 'Yes' || {IsOpenHoleCompletionFeasible} == 'No'",
+                        "options": [
+                            {
+                                "name": "AreAllFHBPOrStaticBHPLessThan5000",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "AreAllFHBPOrStaticBHPLessThan5000",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "AreAllFHBPOrStaticBHPLessThan5000_result",
+                        "name": "AreAllFHBPOrStaticBHPLessThan5000_result",
+                        "type": "resultbox",
+                        "label": "Evaluate Cased Hole option -- go to Casing Size Screening module for CH options.",
+                        "condition": "{AreAllFHBPOrStaticBHPLessThan5000} == 'No'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsHoleSizeSmallerThan614",
+                        "name": "IsHoleSizeSmallerThan614",
+                        "type": "question",
+                        "label": "Screen for OH sizes. Is hole size smaller than 6-1/4\"?",
+                        "tooltip": "Note:  MZ systems for hole sizes less than 6-1/4\" are not currently in use in DW portfolio",
+                        "condition": "{AreAllFHBPOrStaticBHPLessThan5000} == 'Yes' || {AreAllFHBPOrStaticBHPLessThan5000} == 'No'",
+                        "options": [
+                            {
+                                "name": "IsHoleSizeSmallerThan614",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsHoleSizeSmallerThan614",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsHoleSizeSmallerThan614_result",
+                        "name": "IsHoleSizeSmallerThan614_result",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "condition": "{IsHoleSizeSmallerThan614} == 'Yes'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "NominalOHSize",
+                        "name": "NominalOHSize",
+                        "type": "question",
+                        "label": "What is nominal OH size?",
+                        "tooltip": "Note: The poor performance of the OH vs CH systems at Stones. <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(47)?csf=1&web=1&e=mnDGI7' target='_blank'>Reference # 47</a> Concept select slide 6- add as info at nominal OH size question",
+                        "condition": "{IsHoleSizeSmallerThan614} == 'No'",
+                        "options": [
+                            {
+                                "name": "NominalOHSize",
+                                "label": "8-1/2\"",
+                                "value": "7.5"
+                            },
+                            {
+                                "name": "NominalOHSize",
+                                "label": "6-1/4\" to 6-1/2\"",
+                                "value": "5.75"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "NominalOHSize_result_1",
+                        "name": "NominalOHSize_result_1",
+                        "type": "resultbox",
+                        "label": "Consider \"big bore\" OH systems --> see reference 35 Multi-Zone Comparison Summary ",
+                        "condition": "{NominalOHSize} == '7.5'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "NominalOHSize_result_2",
+                        "name": "NominalOHSize_result_2",
+                        "type": "resultbox",
+                        "label": "Consider \"slim\" OH systems --> see reference 35 Multi-Zone Comparison Summary ",
+                        "condition": "{NominalOHSize} == '5.75'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "OH_Screening-comment",
+                        "name": "OH_Screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "zonal_isolation",
+                "name": "zonal_isolation",
+                "type": "tab",
+                "label": "Zonal Isolation Screening",
+                "content": [
+                    {
+                        "id": "IsRobustZonalIsolationRequired",
+                        "name": "IsRobustZonalIsolationRequired",
+                        "type": "question",
+                        "label": "Is robust zonal isolation required for any reason during execution or lifecycle reservoir management (i.e. - differential depletion- water breakthrough or avoidance - shale stability - etc.)?",
+                        "tooltip": "Other considerations: -Solids and sand control compaction. Effectiveness of OH fracturing and lack of experience in this space; see experience from Chevron re: OHF&P completions.  Current data set is very limited on efficiency of OH F&P completions. <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(44)?csf=1&web=1&e=OdSbd2' target='_blank'>Reference 44</a> SPE Papers",
+                        "options": [
+                            {
+                                "name": "IsRobustZonalIsolationRequired",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsRobustZonalIsolationRequired",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsRobustZonalIsolationRequired_result",
+                        "name": "IsRobustZonalIsolationRequired_result",
+                        "type": "resultbox",
+                        "label": "Cased hole systems - proceed to casing size screening",
+                        "condition": "{IsRobustZonalIsolationRequired} == 'Yes'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsRobustZonalIsolationRequired_result-2",
+                        "name": "IsRobustZonalIsolationRequired_result-2",
+                        "type": "resultbox",
+                        "label": "OH Completions Feasible",
+                        "condition": "{IsRobustZonalIsolationRequired} == 'No'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "zonal_isolation-comment",
+                        "name": "zonal_isolation-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "breaker_screeening",
+                "name": "breaker_screeening",
+                "type": "tab",
+                "label": "DIF and Breaker Screening",
+                "tooltip": "In high temperature environments where there is a significant time delay between initial completion and well unloading/first oil, consider barite flowback for cleanup, possibly direct to rig",
+                "content": [
+                    {
+                        "id": "FluidSystemCellColor",
+                        "name": "FluidSystemCellColor",
+                        "type": "question",
+                        "label": "According to the DIF systems matrix, what color cell does your fluid system fall into?",
+                        "tooltip": "In high temperature environments where there is a significant time delay between initial completion and well unloading/first oil, consider barite flowback for cleanup, possibly direct to rig. <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(23)?csf=1&web=1&e=H6FZnf' target='_blank'>(see reference 23)</a>",
+                        "options": [
+                            {
+                                "name": "FluidSystemCellColor",
+                                "label": "Green",
+                                "value": "Green"
+                            },
+                            {
+                                "name": "FluidSystemCellColor",
+                                "label": "Yellow",
+                                "value": "Yellow"
+                            },
+                            {
+                                "name": "FluidSystemCellColor",
+                                "label": "Red",
+                                "value": "Red"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "FluidSystemCellColor_result1",
+                        "name": "FluidSystemCellColor_result1",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "disableColor": "incomplete",
+                        "condition": "{FluidSystemCellColor} == 'Red'",
+                        "enableColor": "fail"
+                    },
+                    {
+                        "id": "FluidSystemCellColor_result3",
+                        "name": "FluidSystemCellColor_result3",
+                        "type": "resultbox",
+                        "label": "DIF Feasible",
+                        "disableColor": "incomplete",
+                        "condition": "{FluidSystemCellColor} == 'Green'",
+                        "enableColor": "pass"
+                    },
+                    {
+                        "id": "IsThereSufficientTimeforDIFDevelopment",
+                        "name": "IsThereSufficientTimeforDIFDevelopment",
+                        "type": "question",
+                        "label": "Is there sufficient time for DIF development?",
+                        "tooltip": "Consider shale reactivity when selecting fluids. <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(20)?csf=1&web=1&e=iJagQy' target='_blank'>(see reference 20)</a> Consider maximum overbalance (OB) limits;  experience suggests maximum of 1,800 psi OB for water-based mud (WBM). Shell SWA -248 in Brunei  was drilled at 2000 psi overbalance with WBM. However, a properly designed WBM will need to be used in these higher overbalance conditions (2000 psi). A high solids loaded WBM system may not",
+                        "condition": "{FluidSystemCellColor} == 'Yellow'",
+                        "options": [
+                            {
+                                "name": "IsThereSufficientTimeforDIFDevelopment",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "IsThereSufficientTimeforDIFDevelopment",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsThereSufficientTimeforDIFDevelopment_result1",
+                        "name": "IsThereSufficientTimeforDIFDevelopment_result1",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "disableColor": "incomplete",
+                        "condition": "{IsThereSufficientTimeforDIFDevelopment} == 'No'",
+                        "enableColor": "fail"
+                    },
+                    {
+                        "id": "IsThereSufficientTimeforDIFDevelopment_result2",
+                        "name": "IsThereSufficientTimeforDIFDevelopment_result2",
+                        "type": "resultbox",
+                        "label": "DIF Feasible",
+                        "disableColor": "incomplete",
+                        "condition": "{IsThereSufficientTimeforDIFDevelopment} == 'Yes'",
+                        "enableColor": "pass"
+                    },
+                    {
+                        "id": "breaker_screeening-comment",
+                        "name": "breaker_screeening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "drillingCompletionFeasibility",
+                "name": "drillingCompletionFeasibility",
+                "type": "tab",
+                "label": "Drilling & Completion Feasibility",
+                "content": [
+                    {
+                        "id": "DoesTrajectoryFallWithinLocalDrillingEnvelop",
+                        "name": "DoesTrajectoryFallWithinLocalDrillingEnvelop",
+                        "label": "Does trajectory fall within local drilling envelope? (see reference 21)",
+                        "tooltip": "<a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(21)?csf=1&web=1&e=ckeLJ0' target='_blank'>(see reference 21)</a>",
+                        "type": "question",
+                        "options": [
+                            {
+                                "name": "DoesTrajectoryFallWithinLocalDrillingEnvelop",
+                                "label": "Red",
+                                "value": "Red"
+                            },
+                            {
+                                "name": "DoesTrajectoryFallWithinLocalDrillingEnvelop",
+                                "label": "Yellow",
+                                "value": "Yellow"
+                            },
+                            {
+                                "name": "DoesTrajectoryFallWithinLocalDrillingEnvelop",
+                                "label": "Green",
+                                "value": "Green"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "DoesTrajectoryFallWithinLocalDrillingEnvelop_result_1",
+                        "name": "DoesTrajectoryFallWithinLocalDrillingEnvelop_result_1",
+                        "type": "resultbox",
+                        "label": "Trajectory not feasible",
+                        "condition": "{DoesTrajectoryFallWithinLocalDrillingEnvelop} == 'Red'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "DoesTrajectoryFallWithinLocalDrillingEnvelop_result_2",
+                        "name": "DoesTrajectoryFallWithinLocalDrillingEnvelop_result_2",
+                        "type": "resultbox",
+                        "label": "Drilling Feasibility - Further Analysis Does trajectory keep DLS below 6 degrees? Will ECD limits be honored given hole size, mud weight? Meet T&D requirements for drilling and completion installation?",
+                        "condition": "{DoesTrajectoryFallWithinLocalDrillingEnvelop} == 'Yellow'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "CanReachTDAtHoleSizeGreaterThan614",
+                        "name": "CanReachTDAtHoleSizeGreaterThan614",
+                        "label": "Can TD be reached at hole size ≥ 6-1/4\"?",
+                        "condition": "{DoesTrajectoryFallWithinLocalDrillingEnvelop} == 'Green' || {DoesTrajectoryFallWithinLocalDrillingEnvelop} == 'Yellow'",
+                        "type": "question",
+                        "options": [
+                            {
+                                "name": "CanReachTDAtHoleSizeGreaterThan614",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "CanReachTDAtHoleSizeGreaterThan614",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "CanReachTDAtHoleSizeGreaterThan614_result",
+                        "name": "DoesHorizontalTrajectoryKeepDLSBelow6_result",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "condition": "{CanReachTDAtHoleSizeGreaterThan614} == 'No'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "AreThereSelectableSystems",
+                        "name": "AreThereSelectableSystems",
+                        "label": "Evaluate individual stage spacing - see Reference 35 Multi-Zone Comparison Summary for system size and stage size options. Are there selectable systems for given hole size, trajectory, and stage spacing?",
+                        "tooltip": "<a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(35)?csf=1&web=1&e=E4gJSE' target='_blank'>Reference 35</a>",
+                        "type": "question",
+                        "condition": "{CanReachTDAtHoleSizeGreaterThan614} == 'Yes'",
+                        "options": [
+                            {
+                                "name": "AreThereSelectableSystems",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "AreThereSelectableSystems",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "AreThereSelectableSystems_result_1",
+                        "name": "AreThereSelectableSystems_result_1",
+                        "type": "resultbox",
+                        "label": "Trajectory feasible",
+                        "condition": "{AreThereSelectableSystems} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "AreThereSelectableSystems_result_2",
+                        "name": "AreThereSelectableSystems_result_2",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "condition": "{AreThereSelectableSystems} == 'No'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "drillingCompletionFeasibility-comment",
+                        "name": "drillingCompletionFeasibility-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "secondTierAssessment",
+                "name": "secondTierAssessment",
+                "type": "tab",
+                "label": "Second Tier Assessment",
+                "content": [
+                    {
+                        "id": "WillThereBeFrequentPostCompletionPumpingTreatments",
+                        "name": "WillThereBeFrequentPostCompletionPumpingTreatments",
+                        "label": "Will there be frequent post-completion pumping treatments?",
+                        "tooltip": "Teams may iterate on proposed well geometry, trajectory, and sand face stage options",
+                        "type": "question",
+                        "options": [
+                            {
+                                "name": "WillThereBeFrequentPostCompletionPumpingTreatments",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "WillThereBeFrequentPostCompletionPumpingTreatments",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "WillThereBeFrequentPostCompletionPumpingTreatments_result_1",
+                        "name": "WillThereBeFrequentPostCompletionPumpingTreatments_result_1",
+                        "type": "resultbox",
+                        "label": "Continue",
+                        "enableColor": "pass",
+                        "condition": "{WillThereBeFrequentPostCompletionPumpingTreatments} == 'No'",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "WillThereBeFrequentPostCompletionPumpingTreatments_result_2",
+                        "name": "WillThereBeFrequentPostCompletionPumpingTreatments_result_2",
+                        "type": "resultbox",
+                        "label": "Further evaluate future wellbore utility trade offs with commingle MZ well (NOT SHOWSTOPPER)",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{WillThereBeFrequentPostCompletionPumpingTreatments} == 'Yes'"
+                    },
+                    {
+                        "id": "IsThereFutureUHRCTarget",
+                        "name": "IsThereFutureUHRCTarget",
+                        "type": "question",
+                        "label": "Is there a future UHRC target in wellbore?",
+                        "options": [
+                            {
+                                "name": "IsThereFutureUHRCTarget",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsThereFutureUHRCTarget",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsThereFutureUHRCTarget_result",
+                        "name": "IsThereFutureUHRCTarget_result",
+                        "type": "resultbox",
+                        "label": "Multizone Technically Feasible",
+                        "condition": "{IsThereFutureUHRCTarget} == 'No'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "CanUHRCTargetBePenetratedAtAngleLessThan55",
+                        "name": "CanUHRCTargetBePenetratedAtAngleLessThan55",
+                        "type": "question",
+                        "label": "Can UHRC target be penetrated at angle < 55 degrees?",
+                        "condition": "{IsThereFutureUHRCTarget} == 'Yes'",
+                        "options": [
+                            {
+                                "name": "CanUHRCTargetBePenetratedAtAngleLessThan55",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "CanUHRCTargetBePenetratedAtAngleLessThan55",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "CanUHRCTargetBePenetratedAtAngleLessThan55_result",
+                        "name": "CanUHRCTargetBePenetratedAtAngleLessThan55_result",
+                        "type": "resultbox",
+                        "label": "continue",
+                        "condition": "{CanUHRCTargetBePenetratedAtAngleLessThan55} == 'No'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "DoesPlannedTrajectoryPutUHRCBehindCasing",
+                        "name": "DoesPlannedTrajectoryPutUHRCBehindCasing",
+                        "type": "question",
+                        "label": "Does the planned trajectory put the UHRC behind 2 strings of casing?",
+                        "condition": "{CanUHRCTargetBePenetratedAtAngleLessThan55} == 'Yes'",
+                        "options": [
+                            {
+                                "name": "DoesPlannedTrajectoryPutUHRCBehindCasing",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "DoesPlannedTrajectoryPutUHRCBehindCasing",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "DoesHorizontalTrajectoryPutUHRCBehindCasing_result_1",
+                        "name": "DoesHorizontalTrajectoryPutUHRCBehindCasing_result_1",
+                        "type": "resultbox",
+                        "label": "Further evaluate future wellbore utility trade offs with commingle MZ well (NOT SHOWSTOPPER)",
+                        "condition": "{DoesPlannedTrajectoryPutUHRCBehindCasing} == 'Yes'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "DoesHorizontalTrajectoryPutUHRCBehindCasing_result_2",
+                        "name": "DoesHorizontalTrajectoryPutUHRCBehindCasing_result_2",
+                        "type": "resultbox",
+                        "label": "Continue",
+                        "condition": "{DoesPlannedTrajectoryPutUHRCBehindCasing} == 'No'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "secondTierAssessment-comment",
+                        "name": "secondTierAssessment-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "sandControlFesibility",
+                "name": "sandControlFesibility",
+                "type": "tab",
+                "label": "OH Sand Control Feasibility - SAS Screening",
+                "content": [
+                    {
+                        "id": "IsD50GreaterThan75Microns",
+                        "name": "IsD50GreaterThan75Microns",
+                        "label": "Tiffin Criteria  UC > 5, Fines < 45 microns is present at less than 5%, d50 > 75 microns, and N/G > 60%.",
+                        "type": "question",
+                        "options": [
+                            {
+                                "name": "IsD50GreaterThan75Microns",
+                                "label": "Pass - all conditions met",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsD50GreaterThan75Microns",
+                                "label": "Fail - some conditions met",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "HaveWeInstalledSASInSimilarReservoirs",
+                        "name": "HaveWeInstalledSASInSimilarReservoirs",
+                        "label": "Have we (or industry)  installed SAS in similar reservoirs?",
+                        "type": "question",
+                        "condition": "{IsD50GreaterThan75Microns} == 'No'",
+                        "options": [
+                            {
+                                "name": "HaveWeInstalledSASInSimilarReservoirs",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "HaveWeInstalledSASInSimilarReservoirs",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsRetentionTestAvailable",
+                        "name": "IsRetentionTestAvailable",
+                        "label": "Is there a retention test available (or analog) for SAS?",
+                        "type": "question",
+                        "condition": "{IsD50GreaterThan75Microns} == 'Yes' || {HaveWeInstalledSASInSimilarReservoirs} == 'Yes'",
+                        "options": [
+                            {
+                                "name": "IsRetentionTestAvailable",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "IsRetentionTestAvailable",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsRetentionTestAvailable_result_1",
+                        "name": "IsRetentionTestAvailable_result_1",
+                        "type": "resultbox",
+                        "label": "Pass",
+                        "condition": "{IsRetentionTestAvailable} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsD10LessThan175",
+                        "name": "IsD10LessThan175",
+                        "label": "Is d10 < 175 microns?",
+                        "type": "question",
+                        "condition": "{HaveWeInstalledSASInSimilarReservoirs} == 'No'",
+                        "options": [
+                            {
+                                "name": "IsD10LessThan175",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsD10LessThan175",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsEnoughTimeAvailableToPerformTest",
+                        "name": "IsEnoughTimeAvailableToPerformTest",
+                        "label": "Is there enough time available to perform test?",
+                        "type": "question",
+                        "tooltip": "Take into account unconfined compressive strength (UCS) values with regards to possible lower chances of hole collapsing around screen. Also related to drawdown.",
+                        "condition": "{IsRetentionTestAvailable} == 'No'",
+                        "options": [
+                            {
+                                "name": "IsEnoughTimeAvailableToPerformTest",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "IsEnoughTimeAvailableToPerformTest",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsD10LessThan175_result_1",
+                        "name": "IsD10LessThan175_result_1",
+                        "type": "resultbox",
+                        "label": "SAS not feasible",
+                        "condition": "{IsD10LessThan175} == 'Yes'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsD10LessThan175_result_2",
+                        "name": "IsD10LessThan175_result_2",
+                        "type": "resultbox",
+                        "label": "Confirm we are willing to take that risk",
+                        "condition": "{IsD10LessThan175} == 'No' || {IsEnoughTimeAvailableToPerformTest} == 'No'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsEnoughTimeAvailableToPerformTest_result",
+                        "name": "IsEnoughTimeAvailableToPerformTest_result",
+                        "type": "resultbox",
+                        "label": "Pass",
+                        "condition": "{IsEnoughTimeAvailableToPerformTest} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "sandControlFesibility-comment",
+                        "name": "sandControlFesibility-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "OHGPCarrierFluidCompatibilityScreening_MZ",
+                "name": "OHGPCarrierFluidCompatibilityScreening_MZ",
+                "type": "tab",
+                "label": "OHGP/Gravel Pack Carrier Fluid Compatibility Screening",
+                "content": [
+                    {
+                        "id": "IsDrillInFluidSBMorWBM",
+                        "name": "IsDrillInFluidSBMorWBM",
+                        "type": "question",
+                        "label": "Is drill-in fluid SBM or WBM? See reference 23.",
+                        "tooltip": "<a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(23)?csf=1&web=1&e=H6FZnf' target='_blank'>reference 23</a>",
+                        "options": [
+                            {
+                                "name": "IsDrillInFluidSBMorWBM",
+                                "label": "SBM - Likely not compatible with GP carrier fluid",
+                                "value": "SBM - Likely not compatible with GP carrier fluid"
+                            },
+                            {
+                                "name": "IsDrillInFluidSBMorWBM",
+                                "label": "WBM - Likely compatible with GP carrier fluid",
+                                "value": "WBM - Likely compatible with GP carrier fluid"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "CanGPPumpProcedureBeChanged",
+                        "name": "CanGPPumpProcedureBeChanged",
+                        "type": "question",
+                        "label": "Can GP pump procedure be changed. spacer added, etc.?",
+                        "condition": "{IsDrillInFluidSBMorWBM} == 'SBM - Likely not compatible with GP carrier fluid'",
+                        "options": [
+                            {
+                                "name": "CanGPPumpProcedureBeChanged",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "CanGPPumpProcedureBeChanged",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "CanGPPumpProcedureBeChanged_result",
+                        "name": "CanGPPumpProcedureBeChanged_result",
+                        "type": "resultbox",
+                        "label": "OHGP not feasible",
+                        "condition": "{CanGPPumpProcedureBeChanged} == 'No'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "AreShalesPresentThatRequireIsolation",
+                        "name": "AreShalesPresentThatRequireIsolation",
+                        "type": "question",
+                        "label": "Are shales present that require isolation with OH packers or use of Shunt Screens?",
+                        "condition": "{IsDrillInFluidSBMorWBM} == 'WBM - Likely compatible with GP carrier fluid' || {CanGPPumpProcedureBeChanged} == 'Yes'",
+                        "options": [
+                            {
+                                "name": "AreShalesPresentThatRequireIsolation",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "AreShalesPresentThatRequireIsolation",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "AreShalesPresentThatRequireIsolation_result_1",
+                        "name": "AreShalesPresentThatRequireIsolation_result_1",
+                        "type": "resultbox",
+                        "label": "OHGP Feasible",
+                        "condition": "{AreShalesPresentThatRequireIsolation} == 'No'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "AreShalesPresentThatRequireIsolation_result_2",
+                        "name": "AreShalesPresentThatRequireIsolation_result_2",
+                        "type": "resultbox",
+                        "label": "Investigate GP pumping with OH packers or Shunt Screens, highlight risk increases",
+                        "condition": "{AreShalesPresentThatRequireIsolation} == 'Yes'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "OHGPCarrierFluidCompatibilityScreening-comment",
+                        "name": "OHGPCarrierFluidCompatibilityScreening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "OHGP_OHSAS_technically_feasible",
+                "name": "OHGP_OHSAS_technically_feasible",
+                "type": "tab",
+                "label": "OHSAS or OHGP technical feasibility",
+                "content": [
+                    {
+                        "id": "IsOneOfOHSASOrOHGPFeasible",
+                        "name": "IsOneOfOHSASOrOHGPFeasible",
+                        "type": "question",
+                        "label": "Is either OHSAS or OHGP technically feasible?",
+                        "options": [
+                            {
+                                "name": "IsOneOfOHSASOrOHGPFeasible",
+                                "label": "No",
+                                "value": "No"
+                            },
+                            {
+                                "name": "IsOneOfOHSASOrOHGPFeasible",
+                                "label": "Yes",
+                                "value": "Yes"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsOneOfOHSASOrOHGPFeasible_result_1",
+                        "name": "IsOneOfOHSASOrOHGPFeasible_result_1",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "condition": "{IsOneOfOHSASOrOHGPFeasible} == 'No'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsOneOfOHSASOrOHGPFeasible_result_2",
+                        "name": "IsOneOfOHSASOrOHGPFeasible_result_2",
+                        "type": "resultbox",
+                        "label": "Continue",
+                        "condition": "{IsOneOfOHSASOrOHGPFeasible} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "OHGP_OHSAS_technically_feasible-comment",
+                        "name": "OHGP_OHSAS_technically_feasible-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "Casing_Size_Screening",
+                "name": "Casing_Size_Screening",
+                "type": "tab",
+                "label": "Casing Size Screening",
+                "content": [
+                    {
+                        "id": "NominalCasingSize",
+                        "name": "NominalCasingSize",
+                        "type": "question",
+                        "label": "What is the nominal casing size?",
+                        "tooltip": "NOTE: Applies for OH or CH system selection NOTE: 7\" solutions will be limited. See <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(35)?csf=1&web=1&e=E4gJSE' target='_blank'>Reference 35</a>",
+                        "options": [
+                            {
+                                "name": "NominalCasingSize",
+                                "label": "7”, 7-5/8”, 9-5/8”",
+                                "value": "7.5"
+                            },
+                            {
+                                "name": "NominalCasingSize",
+                                "label": "≤5-1/2\"",
+                                "value": "4.5"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "NominalCasingSize_result_1",
+                        "name": "NominalCasingSize_result_1",
+                        "type": "resultbox",
+                        "label": "See reference 35 Multi-Zone Comparison Summary for available solutions",
+                        "condition": "{NominalCasingSize} == '7.5'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "NominalCasingSize_result_2",
+                        "name": "NominalCasingSize_result_2",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "condition": "{NominalCasingSize} == '4.5'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "Casing_Size_Screening-comment",
+                        "name": "Casing_Size_Screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "Stage_Count_Screening",
+                "name": "Stage_Count_Screening",
+                "type": "tab",
+                "label": "Stage Count Screening",
+                "content": [
+                    {
+                        "id": "NumberOfStagesRequiredForProposedSandFaceCompletion",
+                        "name": "NumberOfStagesRequiredForProposedSandFaceCompletion",
+                        "type": "question",
+                        "label": "How many stages are required for proposed sand face completion?",
+                        "tooltip": "NOTE: This module applies for either OH or CH system selection, NOTE: See <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(08)?csf=1&web=1&e=klH4du' target='_blank'>Reference 8</a> Multi-Zone Cost Screening Tool. Typicially ≥3 zones/stages are needed for MZ systems to be attractive for TLP applications, while MZ systems are likely competitive for ≥2 stages for SS wells. NOTE: Consider min/max separation on stages when selecting system. NOTE: There is flexibility with MZ systems to add or remove zones if actual pay varies from expected. See <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(35)?csf=1&web=1&e=E4gJSE' target='_blank'>Reference 35</a>",
+                        "options": [
+                            {
+                                "name": "NumberOfStagesRequiredForProposedSandFaceCompletion",
+                                "label": "2-3",
+                                "value": "1"
+                            },
+                            {
+                                "name": "NumberOfStagesRequiredForProposedSandFaceCompletion",
+                                "label": "4-6",
+                                "value": "2"
+                            },
+                            {
+                                "name": "NumberOfStagesRequiredForProposedSandFaceCompletion",
+                                "label": ">6",
+                                "value": "6"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "NumberOfStagesRequiredForProposedSandFaceCompletion_result_1",
+                        "name": "NumberOfStagesRequiredForProposedSandFaceCompletion_result_1",
+                        "type": "resultbox",
+                        "label": "Evaluate value proposition of MZ system against conventional stacked completions",
+                        "condition": "{NumberOfStagesRequiredForProposedSandFaceCompletion} == '1'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "NominalCasingSize_result_2",
+                        "name": "NominalCasingSize_result_2",
+                        "type": "resultbox",
+                        "label": "See reference 35 Multi-Zone Comparison Summary for available solutions",
+                        "condition": "{NumberOfStagesRequiredForProposedSandFaceCompletion} == '2'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "NominalCasingSize_result_3",
+                        "name": "NominalCasingSize_result_3",
+                        "type": "resultbox",
+                        "label": "See reference 35 Multi-Zone Comparison Summary  for available solutions; >6 stages will eliminate numerous options",
+                        "condition": "{NumberOfStagesRequiredForProposedSandFaceCompletion} == '6'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "Stage_Count_Screening-comment",
+                        "name": "Stage_Count_Screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "lower_completion_screening",
+                "name": "lower_completion_screening",
+                "type": "tab",
+                "label": "Cased Hole Lower Completion Installation Screening",
+                "content": [
+                    {
+                        "id": "IsThereAtleastOneCommerciallyAvailableSystem",
+                        "name": "IsThereAtleastOneCommerciallyAvailableSystem",
+                        "type": "question",
+                        "label": "Evaluate selectable systems for given hole size, trajectory, and stage spacing - see reference 35 Multi-Zone Comparison Summary for system size and stage size options. Is there at least one commercially available system for the given requirements?",
+                        "tooltip": "<a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(35)?csf=1&web=1&e=E4gJSE' target='_blank'>reference 35</a>",
+                        "options": [
+                            {
+                                "name": "IsThereAtleastOneCommerciallyAvailableSystem",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsThereAtleastOneCommerciallyAvailableSystem",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsThereAtleastOneCommerciallyAvailableSystem_result_1",
+                        "name": "IsThereAtleastOneCommerciallyAvailableSystem_result_1",
+                        "type": "resultbox",
+                        "label": "Re-evaluate well architecture.",
+                        "condition": "{IsThereAtleastOneCommerciallyAvailableSystem} == 'No'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "CanAllZonesBePerforatedSingleTrip",
+                        "name": "CanAllZonesBePerforatedSingleTrip",
+                        "type": "question",
+                        "label": "Can all the zones be perforated in a single trip (without a barrier, differential pressure between zones consideration etc.)?",
+                        "options": [
+                            {
+                                "name": "CanAllZonesBePerforatedSingleTrip",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "CanAllZonesBePerforatedSingleTrip",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "CanAllZonesBePerforatedSingleTrip_result_1",
+                        "name": "CanAllZonesBePerforatedSingleTrip_result_1",
+                        "type": "resultbox",
+                        "label": "Continue",
+                        "condition": "{CanAllZonesBePerforatedSingleTrip} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "CanAllZonesBePerforatedSingleTrip_result_2",
+                        "name": "CanAllZonesBePerforatedSingleTrip_result_2",
+                        "type": "resultbox",
+                        "label": "Multiple trips required if drilling is feasible",
+                        "condition": "{CanAllZonesBePerforatedSingleTrip} == 'No'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "DoesWellDesignAllowForSufficientSumpLength",
+                        "name": "DoesWellDesignAllowForSufficientSumpLength",
+                        "type": "question",
+                        "label": "Does well design allow for sufficient sump length for MZ system selection?",
+                        "condition": "{IsThereAtleastOneCommerciallyAvailableSystem} == 'Yes' || {IsThereAtleastOneCommerciallyAvailableSystem} == 'No'",
+                        "options": [
+                            {
+                                "name": "DoesWellDesignAllowForSufficientSumpLength",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "DoesWellDesignAllowForSufficientSumpLength",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "DoesWellDesignAllowForSufficientSumpLength_result",
+                        "name": "DoesWellDesignAllowForSufficientSumpLength_result",
+                        "type": "resultbox",
+                        "label": "Pass - continue technical screening",
+                        "condition": "{DoesWellDesignAllowForSufficientSumpLength} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "DoesWellDesignAllowForSufficientSumpLength_result_2",
+                        "name": "DoesWellDesignAllowForSufficientSumpLength_result_2",
+                        "type": "resultbox",
+                        "label": "Re-evaluate well architecture",
+                        "condition": "{DoesWellDesignAllowForSufficientSumpLength} == 'No'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsProposedTotalCompletionLengthLessThanSystemLimitations",
+                        "name": "IsProposedTotalCompletionLengthLessThanSystemLimitations",
+                        "type": "question",
+                        "label": "Is proposed total completion length less than system limitations (T&D, friction, rates & volumes, etc.)?",
+                        "tooltip": "NOTE:  Can you perforate in 1 trip - Y/N? If NO, may not be a show-stopper If completion length > LC system limitations (Friction, rates/volumens, etc.), consider stacking LC systems May not ultimately affect system selection BUT may impact COST or RISK PROFILE reference min sump length <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(35)?csf=1&web=1&e=E4gJSE' target='_blank'>(reference 35 Multi-Zone Comparison Summary)</a>",
+                        "options": [
+                            {
+                                "name": "IsProposedTotalCompletionLengthLessThanSystemLimitations",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsProposedTotalCompletionLengthLessThanSystemLimitations",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsProposedTotalCompletionLengthLessThanSystemLimitations_result",
+                        "name": "IsProposedTotalCompletionLengthLessThanSystemLimitations_result",
+                        "type": "resultbox",
+                        "label": "Pass - continue technical screening",
+                        "condition": "{IsProposedTotalCompletionLengthLessThanSystemLimitations} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsProposedTotalCompletionLengthLessThanSystemLimitations_result_1",
+                        "name": "IsProposedTotalCompletionLengthLessThanSystemLimitations_result_1",
+                        "type": "resultbox",
+                        "label": "Evaluate opportunity to stack systems",
+                        "condition": "{IsProposedTotalCompletionLengthLessThanSystemLimitations} == 'No'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "lower_completion_screening-comment",
+                        "name": "lower_completion_screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "sand_control_screening",
+                "name": "sand_control_screening",
+                "type": "tab",
+                "label": "Stimulation/Sand Control Screening",
+                "content": [
+                    {
+                        "id": "IsMultiZoneCommingledWellTechnicallyFeasible",
+                        "name": "IsMultiZoneCommingledWellTechnicallyFeasible",
+                        "type": "question",
+                        "label": "See \"Single Cased Hole Gravel Pack\" workflow for determination on need for stimulation (e.g. hydraulic fracturing) and sand control solutions (HRWP vs. F&P) Is a Multi-Zone commingle well technically feasible?",
+                        "tooltip": "NOTE:  Consider: Perm & reservoir properties, Water contacts, Outflow limits, Fluid loss pill clean-up - GENERALLY, base case assumption for OH completions likely to be stimulated (F&P) eg when unable to clean up DIF through GP port with breaker, Stage separation, Erosion capacity of systems, Inner string limitation for overall zone length without round tripping service tool, How a depleted zone included in MZ system will limit overall DP rating in treatment in production modes as well as perforating challenges.",
+                        "options": [
+                            {
+                                "name": "IsMultiZoneCommingledWellTechnicallyFeasible",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsMultiZoneCommingledWellTechnicallyFeasible",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsMultiZoneCommingledWellTechnicallyFeasible_result_1",
+                        "name": "IsMultiZoneCommingledWellTechnicallyFeasible_result_1",
+                        "type": "resultbox",
+                        "label": "Continue",
+                        "condition": "{IsMultiZoneCommingledWellTechnicallyFeasible} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "IsMultiZoneCommingledWellTechnicallyFeasible_result_2",
+                        "name": "IsMultiZoneCommingledWellTechnicallyFeasible_result_2",
+                        "type": "resultbox",
+                        "label": "Stop",
+                        "condition": "{IsMultiZoneCommingledWellTechnicallyFeasible} == 'No'",
+                        "enableColor": "fail",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "infotoMovetoNextQuestionTf",
+                        "name": "infotoMovetoNextQuestionTf",
+                        "label": "This is the end of Technical Feasibility. Proceed to Value Economic Screening if technically feasible. Value Economic Screening not recommended for technically not feasible concepts.",
+                        "labelSave": "Remember to save your project.",
+                        "type": "info"
+                    },
+                    {
+                        "id": "sand_control_screening-comment",
+                        "name": "sand_control_screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        "id": "valueEconomicScreening",
+        "name": "valueEconomicScreening",
+        "label": "Value Economic Screening",
+        "innerTabs": [
+            {
+                "id": "cost_screening",
+                "name": "cost_screening",
+                "type": "tab",
+                "label": "Cost Screening",
+                "tooltip": "NOTE: Consider the following: -Reference CET multi-zone cost screening tool <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(08)?csf=1&web=1&e=klH4du' target='_blank'>(#8 in REFRENCES tab)</a> for days and cost estimates -review NPT/TECOP assumptions for MZ well systems over conventional or stacked completions -Recent MZ performance at Stones is documented as follows:",
+                "content": [
+                    {
+                        "id": "CanMultiZoneCompletionSystemReduceWellCount",
+                        "name": "CanMultiZoneCompletionSystemReduceWellCount",
+                        "type": "question",
+                        "tooltip": "NOTE:  Carefully consider development impact of extra or removed wells",
+                        "label": "Determine incremental cost for a MZ well system over a single well and/or conventional stacked well (commingle or stacked selective well). Can a multi-zone completion system reduce well count?",
+                        "options": [
+                            {
+                                "name": "CanMultiZoneCompletionSystemReduceWellCount",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "CanMultiZoneCompletionSystemReduceWellCount",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "CanMultiZoneCompletionSystemReduceWellCount_result_1",
+                        "name": "CanMultiZoneCompletionSystemReduceWellCount_result_1",
+                        "type": "resultbox",
+                        "label": "Include Savings in NPV Calcs $75 mln SS $50 mln TLP",
+                        "condition": "{CanMultiZoneCompletionSystemReduceWellCount} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "CanMultiZoneCompletionSystemReduceWellCount_result_2",
+                        "name": "CanMultiZoneCompletionSystemReduceWellCount_result_2",
+                        "type": "resultbox",
+                        "label": "No additional cost savings to capture in NPV calcs",
+                        "condition": "{CanMultiZoneCompletionSystemReduceWellCount} == 'No'",
+                        "enableColor": "notapplicable",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "cost_screening-comment",
+                        "name": "cost_screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "Differential_Depletion_Screening",
+                "name": "Differential_Depletion_Screening",
+                "type": "tab",
+                "label": "Differential Depletion Screening",
+                "tooltip": "These questions should be answered based on notional understanding of the wellbore, reservoir, and FDP. Answering yes to these questions would kickoff more detailed CGM and Prosper modelling",
+                "content": [
+                    {
+                        "id": "WillSignificantDepletionOccur",
+                        "name": "WillSignificantDepletionOccur",
+                        "type": "question",
+                        "label": "Will significant differential depletion occur ( >1,000 psi) during the well life?",
+                        "tooltip": "NOTE:  These questions should be answered based on notional understanding of the wellbore, reservoir, and FDP. Answering yes to these questions would kickoff more detailed CGM and Prosper modelling. In the detailed design phase: -Verify timing of differential depletion. If significant differential depletion doesn't occur until 5+ yrs from initial production, the value associated with later life production may not justify the additional cost for a smart well. Additionally, the reliability of the ICV's decreases over time and therefore the late life recovered volumes should be risked accordingly in the value analysis <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(48)?csf=1&web=1&e=rsHsSg' target='_blank'>(#48 in REFRENCES tab incl installation failure history)</a>. -Flag different Prod Index (PI) between zones and optimize production from each zone accordingly",
+                        "options": [
+                            {
+                                "name": "WillSignificantDepletionOccur",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "WillSignificantDepletionOccur",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "WillSignificantDepletionOccur_result_1",
+                        "name": "WillSignificantDepletionOccur_result_1",
+                        "type": "resultbox",
+                        "label": "Pass - continue to screen for additional applicable smart well benefits Quantify differential depletion smart well benefits via production & reservoir modelling",
+                        "condition": "{WillSignificantDepletionOccur} == 'Yes'",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "WillSignificantDepletionOccur_result_2",
+                        "name": "WillSignificantDepletionOccur_result_2",
+                        "type": "resultbox",
+                        "label": "Assumption is that once significant differential depletion occurs, the zones should be operated with zonal control to optimize production, reduce crossflow, etc. Current smart well technology exists to control flow from 2 zones/systems. Future smart well technology that requires development will control flow from each zone/stage of the completion (>2 zones/stages)",
+                        "condition": "{WillSignificantDepletionOccur} == 'No'",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete"
+                    },
+                    {
+                        "id": "Differential_Depletion_Screening-comment",
+                        "name": "Differential_Depletion_Screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "zonal_EUR_differences_screening",
+                "name": "zonal_EUR_differences_screening",
+                "type": "tab",
+                "label": "Zonal EUR Differences Screening",
+                "content": [
+                    {
+                        "name": "IsEUREachZoneSignificantlyDifferent",
+                        "id": "IsEUREachZoneSignificantlyDifferent",
+                        "label": "Are the EUR's of each zone significantly different?",
+                        "tooltip": "This can be screened at or near the Early Assist phase of the WDP",
+                        "type": "question",
+                        "options": [
+                            {
+                                "name": "IsEUREachZoneSignificantlyDifferent",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsEUREachZoneSignificantlyDifferent",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsEURZoneSignificantlyDifferent_result_pass",
+                        "name": "IsEURZoneSignificantlyDifferent_result_pass",
+                        "type": "resultbox",
+                        "label": "Pass - continue value/economic screening",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete",
+                        "condition": "{IsEUREachZoneSignificantlyDifferent} == 'No'"
+                    },
+                    {
+                        "name": "WhichZoneHasHigherEUR",
+                        "id": "WhichZoneHasHigherEUR",
+                        "label": "Which zone has significantly higher EUR?",
+                        "type": "question",
+                        "condition": "{IsEUREachZoneSignificantlyDifferent} == 'Yes'",
+                        "options": [
+                            {
+                                "name": "WhichZoneHasHigherEUR",
+                                "label": "Upper zone(Lower Zone(s))",
+                                "value": "upper_zone"
+                            },
+                            {
+                                "name": "WhichZoneHasHigherEUR",
+                                "label": "Lower Zone(s)",
+                                "value": "lower_zone"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "HigherEURZone_result_warning",
+                        "name": "HigherEURZone_result_warning",
+                        "type": "resultbox",
+                        "label": "A plug could be installed to isolate the lower zone (or group of zones). Stacking MZ systems would increase the risk to the higher value lower sand package. Note that in most cases an intervention on a subsea well outweighs the incremental cost for a smart well. Continue value/economic screening for applicable smart well benefits. Quantify Smart Well benefits via a decision tree and risked cost of an intervention vs. a smart well installation",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{WhichZoneHasHigherEUR} == 'lower_zone'"
+                    },
+                    {
+                        "id": "HigherEURZone_result_pass",
+                        "name": "HigherEURZone_result_pass",
+                        "type": "resultbox",
+                        "label": "A selective well could be installed and a S/L intervention executed to close the SSD. However, the ability to successfully close the SSD will be less likely than opening an SSD for the first time. Incremental mechanical risk by stacking multiple zones in the same sand package is less than additional risk by stacking multiple zones in upper sand package. Note that in most cases an intervention on a subsea well outweighs the incremental cost for a smart well. Continue value/economic screening for applicable smart well benefits. Quantify Smart Well benefits via a decision tree and risked cost of an intervention vs. a smart well installation",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete",
+                        "condition": "{WhichZoneHasHigherEUR} == 'upper_zone'"
+                    },
+                    {
+                        "id": "zonal_EUR_differences_screening-comment",
+                        "name": "zonal_EUR_differences_screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "accelerated_production_or_EOFL_screening",
+                "name": "accelerated_production_or_EOFL_screening",
+                "type": "tab",
+                "label": "Accelerated Production or EOFL Screening",
+                "content": [
+                    {
+                        "name": "IsThereProductionAccelerationBenefit",
+                        "id": "IsThereProductionAccelerationBenefit",
+                        "label": "Is there a production acceleration benefit or end of field life benefit of installing a second zone (or 3+ zones)?",
+                        "tooltip": "NOTE:  As an example: -Accelerating production from an uphole zone may increase EUR from the zone if current FDP production forecasts exceed EOFL estimates.",
+                        "type": "question",
+                        "options": [
+                            {
+                                "name": "IsThereProductionAccelerationBenefit",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsThereProductionAccelerationBenefit",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsProductionAccelerationBenefit_result_pass",
+                        "name": "IsProductionAccelerationBenefit_result_pass",
+                        "type": "resultbox",
+                        "label": "Pass - Continue to screen for additional applicable MZ  Well benefits. Quantify value of production acceleration via economic modelling",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete",
+                        "condition": "{IsThereProductionAccelerationBenefit} == 'Yes'"
+                    },
+                    {
+                        "id": "IsProductionAccelerationBenefit_result_warning",
+                        "name": "IsProductionAccelerationBenefit_result_warning",
+                        "type": "resultbox",
+                        "label": "Continue value/economic screening for applicable MZ well benefits. Quantify value of production acceleration via economic modelling",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{IsThereProductionAccelerationBenefit} == 'No'"
+                    },
+                    {
+                        "id": "accelerated_production_or_EOFL_screening-comment",
+                        "name": "accelerated_production_or_EOFL_screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "waterflood_or_water_production_screening",
+                "name": "waterflood_or_water_production_screening",
+                "type": "tab",
+                "label": "Waterflood or Water Production Screening",
+                "content": [
+                    {
+                        "name": "IsOneOfTheZoneWaterFlooded",
+                        "id": "IsOneOfTheZoneWaterFlooded",
+                        "label": "Is one of the zones water flooded or is one zone expected to have significant water production before the other?",
+                        "tooltip": "Current MZ systems have the option to isolate water production or shut off injection by closing specific production sleeves by mechanical means (intervention $$).  Current technology does not exist to have this same selectivity with smart well systems. H2S/metallurgy evaluation should be done if water production is expected in any zone.  Consider impacts to complex metallurgy combinations in SMART kit during acid (pH 1-2) or caustic (pH 11-13) stimulations.",
+                        "type": "question",
+                        "dwfsUrl": "http://wellsoffice.shell.com/wo-dwfs/dwfs/H2SCategory/H2S",
+                        "dwfsTab": "H2S & CO2",
+                        "options": [
+                            {
+                                "name": "IsOneOfTheZoneWaterFlooded",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsOneOfTheZoneWaterFlooded",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsZoneFlodded_result_pass",
+                        "name": "IsZoneFlodded_result_pass",
+                        "type": "resultbox",
+                        "label": "Pass - Continue to screen for additional applicable MZ  Well benefits",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete",
+                        "condition": "{IsOneOfTheZoneWaterFlooded} == 'Yes'"
+                    },
+                    {
+                        "id": "IsZoneFlodded_result_warning",
+                        "name": "IsZoneFlodded_result_warning",
+                        "type": "resultbox",
+                        "label": "Continue value/economic screening for applicable MZ well benefits.",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{IsOneOfTheZoneWaterFlooded} == 'No'"
+                    },
+                    {
+                        "id": "waterflood_or_water_production_screening-comment",
+                        "name": "waterflood_or_water_production_screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "secondary_WRFM_value_screening",
+                "name": "secondary_WRFM_value_screening",
+                "type": "tab",
+                "label": "Secondary WRFM Value Screening",
+                "content": [
+                    {
+                        "name": "IsThereEURBenefitToZonalControl",
+                        "id": "IsThereEURBenefitToZonalControl",
+                        "label": "Is there an EUR benefit to zonal control for: -GOR Optimization, -PLT Elimination, -Individual PTAs (i.e. Mars A-5 benefits)?",
+                        "type": "question",
+                        "options": [
+                            {
+                                "name": "IsThereEURBenefitToZonalControl",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsThereEURBenefitToZonalControl",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsThereEURBenefitToZonalControl_result_pass",
+                        "name": "IsThereEURBenefitToZonalControl_result_pass",
+                        "type": "resultbox",
+                        "label": "Capture incremental NPV in value assessment.",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{IsThereEURBenefitToZonalControl} == 'Yes'"
+                    },
+                    {
+                        "id": "IsThereSignificantBenefitToSelectiveProductionSimulation",
+                        "name": "IsThereSignificantBenefitToSelectiveProductionSimulation",
+                        "type": "question",
+                        "label": "Is there a significant benefit to selective production stimulation or remediation?",
+                        "tooltip": "Additional benefits include: -Acceleration of production from zones that could be used for future FDP planning. Earlier access to information. -MZ systems are configured in a way that PLT’s can be run. Water and Oil tracers can be added to screens to provide production information on a per zone or even per screen joint resolution level (This is done in detailed design phase). Consider all of the following:- Differences in operating procedures (different testing requirements, etc.). - Limitation of post-production logging (unable to acquire a production profile across the upper zone by means of conventional logging), stimulations (less effective), or other interventions.- Value of information of shut-in zones in a smart well (pressure).- End of field life impacts. Fishability/Recovery of MZ system. - Deferment associated with SMART (ICV) regulatory integrity testing. - Uncertainty in results of PTA and pressures due to design and as-installed conditions.",
+                        "condition": "{IsThereEURBenefitToZonalControl} == 'No' || {IsThereEURBenefitToZonalControl} == 'Yes'",
+                        "options": [
+                            {
+                                "name": "IsThereSignificantBenefitToSelectiveProductionSimulation",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsThereSignificantBenefitToSelectiveProductionSimulation",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsSignificantBenefit_result_pass",
+                        "name": "IsSignificantBenefit_result_pass",
+                        "type": "resultbox",
+                        "label": "Capture incremental NPV in value assessment",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{IsThereSignificantBenefitToSelectiveProductionSimulation} == 'Yes'"
+                    },
+                    {
+                        "id": "IsSignificantBenefit_result_warning",
+                        "name": "IsSignificantBenefit_result_warning",
+                        "type": "resultbox",
+                        "label": "Is at least 1 of the zones large with a significant number of future development wells, where additional downhole monitoring could lead to field development optimization benefits? Capture incremental VOI value assessment",
+                        "enableColor": "warning",
+                        "disableColor": "incomplete",
+                        "condition": "{IsThereSignificantBenefitToSelectiveProductionSimulation} == 'No'"
+                    },
+                    {
+                        "id": "secondary_WRFM_value_screening-comment",
+                        "name": "secondary_WRFM_value_screening-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            },
+            {
+                "id": "productionReservoirModelling",
+                "name": "productionReservoirModelling",
+                "type": "tab",
+                "label": "Production & Reservoir Modelling",
+                "content": [
+                    {
+                        "id": "determineCostOfPotentialConcepts",
+                        "name": "determineCostOfPotentialConcepts",
+                        "label": "Determine costs of potential, applicable MZ concepts (conventional commingle, stacked selective, commingle MZ sytem, smart MZ system).",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "generateValueComparison",
+                        "name": "generateValueComparison",
+                        "label": "If applicable: Conduct evaluation of high angle/slanted completions - Generate value comparison of OH vs CH concepts.",
+                        "tooltip": "NOTE:  See Reservoir Engineering guidelines for building reservoir models for highly deviated or slant wells",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "generateProductionForcasts",
+                        "name": "generateProductionForcasts",
+                        "label": "Generate production forecasts of single zone, conventional stacked commingle, and MZ wells.",
+                        "tooltip": "If outflow constraints are realized with increased commingle flow rates, consider installing larger tubing if feasible. Reference the CET Smart Well Screening Tool for GAP modelling structure and smart well modelling best practices <a rel='noreferrer' href='https://eu001-sp.shell.com/:f:/r/sites/SPO000507/Shared%20Documents/Reference%20Documents/Reference%20(09)?csf=1&web=1&e=FfhNIy' target='_blank'>(#9)</a>.",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "constructDecisionTreeOfConcept",
+                        "name": "constructDecisionTreeOfConcept",
+                        "label": "Construct decision tree of concept options with risked execution, VOI events, etc...",
+                        "tooltip": "Attempt to assign notional probabilities of occurrence for most easily quantifiable risks i.e. likelihood of fluid compatibility issues, uncertainty in drive mechanism, etc. and risk production functions.",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "generateFinalVirNpv",
+                        "name": "generateFinalVirNpv",
+                        "label": "Generate final VIR, NPV, etc. of conceptual scenarios.",
+                        "tooltip": "NOTE: Keep in mind what is the main value driver for the project (short term cash vs. NPV vs. VIR vs. lowest cost, etc.). This may be different for different projects and also may vary with time. NOTE:  Give due consideration to rate curtailment, especially from prolific reservoirs.",
+                        "type": "statement"
+                    },
+                    {
+                        "id": "IsThereSignificantBenefitOfCommingledMultiZoneCompletion",
+                        "name": "IsThereSignificantBenefitOfCommingledMultiZoneCompletion",
+                        "label": "Is there a significant cost, rate, volume, or risk mitigation benefit of a commingle MZ completion?",
+                        "type": "question",
+                        "options": [
+                            {
+                                "name": "IsThereSignificantBenefitOfCommingledMultiZoneCompletion",
+                                "label": "Yes",
+                                "value": "Yes"
+                            },
+                            {
+                                "name": "IsThereSignificantBenefitOfCommingledMultiZoneCompletion",
+                                "label": "No",
+                                "value": "No"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "IsThereSignificantBenefitOfCommingleWell_result_left",
+                        "name": "IsThereSignificantBenefitOfCommingleWell_result_left",
+                        "type": "resultbox",
+                        "label": "Proceed forward with Multi-zone Well Concept Selection recommendation.",
+                        "enableColor": "pass",
+                        "disableColor": "incomplete",
+                        "condition": "{IsThereSignificantBenefitOfCommingledMultiZoneCompletion} == 'Yes'"
+                    },
+                    {
+                        "id": "IsThereSignificantBenefitOfCommingleWell_result_right",
+                        "name": "IsThereSignificantBenefitOfCommingleWell_result_right",
+                        "type": "resultbox",
+                        "label": "No incremental economic benefit",
+                        "enableColor": "notapplicable",
+                        "disableColor": "incomplete",
+                        "condition": "{IsThereSignificantBenefitOfCommingledMultiZoneCompletion} == 'No'"
+                    },
+                    {
+                        "id": "infotoMovetoNextQuestionVes",
+                        "name": "infotoMovetoNextQuestionVes",
+                        "label": "End of Technical and Value Economic Screening. Comparison with other selected lower completion concepts can be viewed in SUMMARY.",
+                        "labelSave":"Remember to save your project.",
+                        "type": "info"
+                    },
+                    {
+                        "id": "productionReservoirModelling-comment",
+                        "name": "productionReservoirModelling-comment",
+                        "type": "commentbox"
+                    }
+                ]
+            }
+        ]
+    }
+]
